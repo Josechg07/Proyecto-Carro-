@@ -1,0 +1,117 @@
+import RPi.GPIO as GPIO
+import time
+
+# Configuración de los pines del servo y motor DC
+servo_pin = 17  # Pin GPIO donde está conectado el servo
+motor_in1 = 24
+motor_in2 = 23
+motor_en = 25
+
+# Configuración de los pines del sensor
+TRIGGER_PIN = 18
+ECHO_PIN = 24
+
+# Inicialización de los pines del servo y motor DC
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(servo_pin, GPIO.OUT)
+GPIO.setup(motor_in1, GPIO.OUT)
+GPIO.setup(motor_in2, GPIO.OUT)
+GPIO.setup(motor_en, GPIO.OUT)
+GPIO.output(motor_in1, GPIO.LOW)
+GPIO.output(motor_in2, GPIO.LOW)
+
+# Inicialización de los pines del sensor
+GPIO.setup(TRIGGER_PIN, GPIO.OUT)
+GPIO.setup(ECHO_PIN, GPIO.IN)
+
+# Configuración del PWM para el servo y motor DC
+pwm_servo = GPIO.PWM(servo_pin, 50)  # Frecuencia de 50 Hz
+pwm_servo.start(0)
+pwm_motor = GPIO.PWM(motor_en, 1000)
+pwm_motor.start(25)
+
+def set_angle(angle):
+    duty_cycle = angle / 18 + 2
+    GPIO.output(servo_pin, True)
+    pwm_servo.ChangeDutyCycle(duty_cycle)
+    time.sleep(1)
+    GPIO.output(servo_pin, False)
+    pwm_servo.ChangeDutyCycle(0)
+
+def medir_distancia():
+    GPIO.output(TRIGGER_PIN, GPIO.HIGH)
+    time.sleep(0.01)
+    GPIO.output(TRIGGER_PIN, GPIO.LOW)
+
+    while GPIO.input(ECHO_PIN) == 0:
+        start_time = time.time()
+    while GPIO.input(ECHO_PIN) == 1:
+        end_time = time.time()
+
+    distance = (end_time - start_time) * 34000 / 2
+    return distance
+
+print("\n")
+print("El servo motor inicia en posición vertical (0 grados).")
+print("Comandos para el servo: 'd' para girar 45 grados a la derecha, 'i' para girar 45 grados a la izquierda.")
+print("Comandos para el motor DC: 'r' para correr, 's' para detener, 'f' para adelante, 'b' para atrás, 'l' para baja velocidad, 'm' para velocidad media, 'h' para alta velocidad, 'e' para salir.")
+print("\n")
+
+set_angle(0)
+
+try:
+    while True:
+        distancia = medir_distancia()
+        print(f"Distancia: {distancia:.2f} cm")
+
+        command = input("Introduce un comando: ")
+
+        # Comandos para el servo
+        if command == 'd':
+            set_angle(180)
+        elif command == 'i':
+            set_angle(0)
+        elif command == '0':
+            set_angle(90)
+        
+        # Comandos para el motor DC
+        elif command == 'r':
+            print("run")
+            GPIO.output(motor_in1, GPIO.HIGH)
+            GPIO.output(motor_in2, GPIO.LOW)
+            print("forward")
+        elif command == 's':
+            print("stop")
+            GPIO.output(motor_in1, GPIO.LOW)
+            GPIO.output(motor_in2, GPIO.LOW)
+        elif command == 'f':
+            print("forward")
+            GPIO.output(motor_in1, GPIO.HIGH)
+            GPIO.output(motor_in2, GPIO.LOW)
+        elif command == 'b':
+            print("backward")
+            GPIO.output(motor_in1, GPIO.LOW)
+            GPIO.output(motor_in2, GPIO.HIGH)
+        elif command == 'l':
+            print("low")
+            pwm_motor.ChangeDutyCycle(25)
+        elif command == 'm':
+            print("medium")
+            pwm_motor.ChangeDutyCycle(50)
+        elif command == 'h':
+            print("high")
+            pwm_motor.ChangeDutyCycle(75)
+        elif command == 'e':
+            GPIO.cleanup()
+            print("GPIO.cleanup")
+            break
+        else:
+            print("<<< comando no reconocido >>>")
+            print("Por favor, introduce un comando válido.")
+        
+        time.sleep(1)
+
+finally:
+    pwm_servo.stop()
+    pwm_motor.stop()
+    GPIO.cleanup()
