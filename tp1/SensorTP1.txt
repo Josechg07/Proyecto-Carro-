@@ -33,3 +33,43 @@ try:
         time.sleep(1)
 except KeyboardInterrupt:
     GPIO.cleanup()
+
+
+Código #2:
+
+
+import RPi.GPIO as GPIO
+import time
+
+# Configuración de los pines del sensor
+TRIGGER_PIN = 18
+ECHO_PIN = 24
+
+# Inicialización de los pines como salida y entrada
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(TRIGGER_PIN, GPIO.OUT)
+GPIO.setup(ECHO_PIN, GPIO.IN)
+
+def medir_distancia():
+    # Envío de un pulso de trigger
+    GPIO.output(TRIGGER_PIN, GPIO.HIGH)
+    time.sleep(0.01)
+    GPIO.output(TRIGGER_PIN, GPIO.LOW)
+
+    # Medición del tiempo de eco
+    while GPIO.input(ECHO_PIN) == 0:
+        start_time = time.time()
+    while GPIO.input(ECHO_PIN) == 1:
+        end_time = time.time()
+
+    # Cálculo de la distancia
+    distance = (end_time - start_time) * 34000 / 2
+    return distance
+
+try:
+    while True:
+        distancia = medir_distancia()
+        print(f"Distancia: {distancia:.2f} cm")
+        time.sleep(1)
+except KeyboardInterrupt:
+    GPIO.cleanup()
