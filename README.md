@@ -99,10 +99,4 @@ El módulo de control del servo envía señales PWM desde un pin del Arduino Uno
 - Los scripts en Arduino no requieren compilación adicional fuera del entorno de desarrollo Arduino IDE.
 - Cargar directamente el código de control en el Arduino Uno desde el Arduino IDE.
 
-## Contribuciones
 
-Las contribuciones son bienvenidas. Si deseas contribuir al proyecto, puedes hacerlo a través de GitHub. Asegúrate de seguir las guías de estilo del proyecto y probar tus cambios antes de hacer un pull request. Agradecemos cualquier tipo de contribución, ya sea en forma de sugerencias para mejorar el código, reportes de errores, mejoras de la documentación o nuevas funcionalidades. Tu participación ayuda a hacer de SONICAR un proyecto mejor y más completo, y valoramos todas las ideas y comentarios que puedan aportar a su desarrollo continuo.
-
-El proyecto SONICAR es solo el comienzo. Con la colaboración de la comunidad y la implementación de nuevas ideas, podemos llevar este proyecto a niveles superiores y explorar nuevas fronteras en el campo de la robótica y la inteligencia artificial. Estamos emocionados de ver a dónde puede llegar este proyecto y cómo puede evolucionar con el tiempo, gracias al apoyo y la creatividad de la comunidad global de desarrolladores.
-
-¡Gracias por tu interés en SONICAR!
