@@ -1,180 +1,223 @@
-# Importar la biblioteca RPi.GPIO para interactuar con los pines GPIO de la Raspberry Pi
-import RPi.GPIO as GPIO
-import time  # Importar la biblioteca time para controlar los tiempos de espera
-import threading  # Importar la biblioteca threading para crear hilos de ejecución
+// Importar la libreria Servo para la activación de sus pines y su debido funcionamiento
+// Importar la libreria de NewPing para medir la distancia con los sensores de ultra sonido
+#include <Servo.h>
+#include <NewPing.h>
+// Configuración de las variables con números enteros
+int giros = 0;
+int e1 = 2;
+int e2 = 3;
+int e3 = 4;
+int t1 = 5;
+int t2 = 6;
+int t3 = 7;
+int in1 = 8;
+int in2 = 9;
+int en = 10;
+int ser = 11;
+int primer = 0;
+int sentido = 0;
+Servo giro;
+int tiempo, frente, derecha, izquierda;
+int recto = 105;
+int max = 350;
 
-# Configuración de los pines del servo, motor DC y sensores (usando numeración BOARD)
-SERVO_PIN = 11  # Pin físico 11 (GPIO 17 en BCM)
-MOTOR_IN1 = 18  # Pin físico 18 (GPIO 24 en BCM)
-MOTOR_IN2 = 16  # Pin físico 16 (GPIO 23 en BCM)
-MOTOR_EN = 22   # Pin físico 22 (GPIO 25 en BCM)
+// COnfiguración para los sensores de ultra sonido 
+NewPing sonar1(t1, e1, max);
+NewPing sonar2(t2, e2, max);
+NewPing sonar3(t3, e3, max);
 
-TRIGGER_PIN_FRONT = 38  # Pin físico 38 (GPIO 20 en BCM)
-ECHO_PIN_FRONT = 40     # Pin físico 40 (GPIO 21 en BCM)
-TRIGGER_PIN_RIGHT = 33  # Pin físico 33 (GPIO 13 en BCM)
-ECHO_PIN_RIGHT = 31     # Pin físico 31 (GPIO 6 en BCM)
-TRIGGER_PIN_LEFT = 37   # Pin físico 37 (GPIO 26 en BCM)
-ECHO_PIN_LEFT = 35      # Pin físico 35 (GPIO 19 en BCM)
+//  Estableciendo los pines y su función, definiendo si es entrada como INPUT y salida como OUTPUT
+void setup() {
+  pinMode(e1, INPUT);
+  pinMode(e2, INPUT);
+  pinMode(e3, INPUT);
+  pinMode(t1, OUTPUT);
+  pinMode(t2, OUTPUT);
+  pinMode(t3, OUTPUT);
+  pinMode(en, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  giro.attach(ser);
+  Serial.begin(9600);
+}
 
-# Inicialización de los pines del servo, motor DC y sensores
-GPIO.setwarnings(False)  # Desactivar advertencias de GPIO
-GPIO.setmode(GPIO.BOARD)  # Configuración del modo de numeración de pines físicos
-GPIO.setup(SERVO_PIN, GPIO.OUT)  # Configurar el pin del servo como salida
-GPIO.setup(MOTOR_IN1, GPIO.OUT)  # Configurar el pin IN1 del motor como salida
-GPIO.setup(MOTOR_IN2, GPIO.OUT)  # Configurar el pin IN2 del motor como salida
-GPIO.setup(MOTOR_EN, GPIO.OUT)  # Configurar el pin ENABLE del motor como salida
-GPIO.output(MOTOR_IN1, GPIO.LOW)  # Establecer el pin IN1 en bajo
-GPIO.output(MOTOR_IN2, GPIO.LOW)  # Establecer el pin IN2 en bajo
-GPIO.setup(TRIGGER_PIN_FRONT, GPIO.OUT)  # Configurar el pin de trigger frontal como salida
-GPIO.setup(ECHO_PIN_FRONT, GPIO.IN)  # Configurar el pin de echo frontal como entrada
-GPIO.setup(TRIGGER_PIN_RIGHT, GPIO.OUT)  # Configurar el pin de trigger derecho como salida
-GPIO.setup(ECHO_PIN_RIGHT, GPIO.IN)  # Configurar el pin de echo derecho como entrada
-GPIO.setup(TRIGGER_PIN_LEFT, GPIO.OUT)  # Configurar el pin de trigger izquierdo como salida
-GPIO.setup(ECHO_PIN_LEFT, GPIO.IN)  # Configurar el pin de echo izquierdo como entrada
+// Configuración para que todas las funciones dentro de este se repitan e igualmente se encuentran las mediciones del los sensores de ultra sonido
+void loop() {
 
-# Configuración del PWM para el servo y motor DC
-pwm_servo = GPIO.PWM(SERVO_PIN, 50)  # Crear PWM en el pin del servo con 50 Hz
-pwm_servo.start(7.5)  # Posición inicial del servo (90 grados)
-pwm_motor = GPIO.PWM(MOTOR_EN, 1000)  # Crear PWM en el pin ENABLE del motor con 1000 Hz
-pwm_motor.start(0)  # Reducir la velocidad del motor al iniciar (25% del ciclo de trabajo)
+  // Verificar si han pasado 43 segundos
+  if (giros >= 12) {
+    delay(950);
+    parar();  // Detener el carro
+    delay(10000);
+    return;  // Salir del loop para evitar seguir ejecutando
+  }
 
-# Variables para el contador de giros
-giros = 0
-vueltas_completas = 0
+  giro.write(101);
+  arrancar();
+  frente = sonar1.ping_cm();
+  derecha = sonar2.ping_cm();
+  izquierda = sonar3.ping_cm();
+  Serial.print("Frente:");
+  Serial.println(frente);
+  Serial.print("Derecha:");
+  Serial.println(derecha);
+  Serial.print("Izquierda:");
+  Serial.println(izquierda);
+  delay(20);
+  corregir();
 
-# Función para establecer el ángulo del servo
-def set_angle(angle):
-    duty_cycle = angle / 18 + 2  # Calcular el ciclo de trabajo correspondiente al ángulo
-    GPIO.output(SERVO_PIN, True)  # Activar el pin del servo
-    pwm_servo.ChangeDutyCycle(duty_cycle)  # Cambiar el ciclo de trabajo del PWM
-    time.sleep(1)  # Esperar 1 segundo para que el servo se mueva
-    GPIO.output(SERVO_PIN, False)  # Desactivar el pin del servo
-    pwm_servo.ChangeDutyCycle(10)  # Detener el PWM
+  if (frente < 80 && derecha > 80) { // Se encarga de los giros hacia la derecha utilizando los sensores ubicados en el frente y a la derecha
 
-# Función para medir la distancia usando un sensor ultrasónico
-def medir_distancia(trigger_pin, echo_pin):
-    GPIO.output(trigger_pin, GPIO.HIGH)  # Enviar pulso alto al pin de trigger
-    time.sleep(0.00001)  # Esperar 10 microsegundos
-    GPIO.output(trigger_pin, GPIO.LOW)  # Enviar pulso bajo al pin de trigger
+    /* if ((td2 - td1) > 1000 ) {
+       giros = giros + 1;
+      }*/
+    giros = giros + 1;
+    if (giros == 1) { // Se encarga de contar los giros que realiza el carro
+      sentido = 1;
+      Serial.println("Sentido derecha");
+    }
+    if (sentido == 1) { // Se encarga del sentido donde esta yendo el carro
+      Serial.println("Primer if");
+      gd();
+      delay(1000);
+      analogWrite(en, 255);
+      derecha = sonar2.ping_cm();
+      giro.write(recto); // Establece el ángulo del servo motor
+      Serial.print("Frente:");
+      Serial.println(frente); // Imprime el valor de frente
+      Serial.print("Derecha:");
+      Serial.println(derecha); // Imprime el valor de la derecha
+      Serial.print("Izquierda:");
+      Serial.println(izquierda); // Imprime el valor de la izquierda
 
-    start_time = time.time()  # Registrar el tiempo de inicio
-    stop_time = start_time
+     // Se encarga de imprimir lo que está detectando
+      Serial.print("Frente:");
+      Serial.println(frente);
+      Serial.print("Derecha:");
+      Serial.println(derecha);
+      Serial.print("Izquierda:");
+      Serial.println(izquierda);
+      corregir();
+      if (izquierda < 25) { // Acomoda el carro para que se aleje de los bordes tanto externos como internos
+        Serial.println("3er if");
+        gd();
+        delay(120);
+      }
+      if (derecha < 25) { // Acomoda el carro para que se aleje de los bordes tanto externos como internos
+        Serial.println("4to if");
+        gi();
+        delay(120);
+      }
+    }
+  }
 
-    while GPIO.input(echo_pin) == 0:  # Esperar a que el pin de echo se ponga alto
-        start_time = time.time()
-    while GPIO.input(echo_pin) == 1:  # Esperar a que el pin de echo se ponga bajo
-        stop_time = time.time()
+  else if (frente < 80 && izquierda > 80) { // Se encarga del giro hacia la derecha
+    /*if ((ti2 - ti1) > 1000) {
+      giros = giros + 1;
+      }*/
+    giros = giros + 1;
+    if (giros == 1) { // Define en que sentido esta girando el carro, ya sea hacia la izquierda o hacia la derecha
+      sentido = 0;
+      Serial.println("Sentido izquierda");
+    }
+    if (sentido == 0) {
+      Serial.println("Segundo if");
+      gi();
+      delay(1000);
+      analogWrite(en, 255);
+      izquierda = sonar3.ping_cm();
+      giro.write(90);
+      Serial.print("Frente:");
+      Serial.println(frente);
+      Serial.print("Derecha:");
+      Serial.println(derecha);
+      Serial.print("Izquierda:");
+      Serial.println(izquierda);
+      corregir();
 
-    time_elapsed = stop_time - start_time  # Calcular el tiempo transcurrido
-    distance = (time_elapsed * 34300) / 2  # Calcular la distancia en cm
-    return distance
+    }
+  }
+  if (derecha > 80) { // Se encarga de que el carro se mantenga a una distancia considerable con respecto a los bordes internos y externos de la pista
+    derecha = sonar2.ping_cm();
+    delay(100);
+  }
+  if (izquierda > 80) { // Se encarga de que el carro se mantenga a una distancia considerable con respecto a los bordes internos y externos de la pista
+    izquierda = sonar3.ping_cm();
+    delay(100);
+  }
+  corregir();
 
-# Función para realizar giros automáticos basados en la distancia medida
-def giro_automatico():
-    global giros, vueltas_completas
-    while vueltas_completas < 4:
-        try:
-            # Medir las distancias frontales, derecha e izquierda
-            distancia_frontal = medir_distancia(TRIGGER_PIN_FRONT, ECHO_PIN_FRONT)
-            distancia_derecha = medir_distancia(TRIGGER_PIN_RIGHT, ECHO_PIN_RIGHT)
-            distancia_izquierda = medir_distancia(TRIGGER_PIN_LEFT, ECHO_PIN_LEFT)
-            print(f"Distancia frontal: {distancia_frontal:.2f} cm, derecha: {distancia_derecha:.2f} cm, izquierda: {distancia_izquierda:.2f} cm")
-
-            if distancia_frontal <= 50:
-                print("Objeto detectado a 50 cm o menos. Girando a la derecha.")
-                set_angle(135)  # Ajustar ángulo para girar a la derecha
-                GPIO.output(MOTOR_IN1, GPIO.LOW)
-                GPIO.output(MOTOR_IN2, GPIO.HIGH)
-                pwm_motor.ChangeDutyCycle(25)
-                time.sleep(1)  # Tiempo del giro
-                GPIO.output(MOTOR_IN1, GPIO.HIGH)
-                GPIO.output(MOTOR_IN2, GPIO.LOW)
-                time.sleep(1)
-                set_angle(90)  # Volver el servo a posición inicial
-                
-            if distancia_frontal <= 20:
-                print("Objeto detectado a 20 cm o menos. Deteniendose")
-                GPIO.output(MOTOR_IN1, GPIO.LOW)
-                GPIO.output(MOTOR_IN2, GPIO.HIGH)
-                time.sleep(0.5)
-                GPIO.output(MOTOR_IN1, GPIO.LOW)
-                GPIO.output(MOTOR_IN2, GPIO.HIGH)
-                set_angle(45)
-                time.sleep(1)
-                GPIO.output(MOTOR_IN1, GPIO.HIGH)
-                GPIO.output(MOTOR_IN2, GPIO.LOW)
-                set_angle(135)
+  if (izquierda < 30) {
+    Serial.println("5to if");
+    gd();
+    delay(120);
+  }
+  if (derecha < 30) {
+    Serial.println("6to if");
+    gi();
+    delay(120);
+  }
+  if (izquierda > derecha) {
+    Serial.println("5to if");
+    giro.write(85);
+    delay(120);
+  }
+  else if (derecha > izquierda) {
+    Serial.println("6to if");
+    giro.write(120);
+    delay(120);
+  }
+}
 
 
-                giros += 1
-                if giros == 4:
-                    vueltas_completas += 1
-                    giros = 0
-                    print(f"Vuelta completa {vueltas_completas} realizada.")
-               
-                if giros == 12:
-                    print("12 giros completados. Manteniendo el motor encendido por 0.5 segundos adicionales.")
-                    GPIO.output(MOTOR_IN1, GPIO.LOW)
-                    GPIO.output(MOTOR_IN2, GPIO.LOW)
-                    pwm_motor.ChangeDutyCycle(25)
-                    time.sleep(0.5)
-                    GPIO.output(MOTOR_IN1, GPIO.HIGH)
-                    GPIO.output(MOTOR_IN2, GPIO.LOW)
-                    break
+void arrancar() {
+  analogWrite(en, 255); // Encender el motor
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+}
 
-            if distancia_derecha > 100:
-                print("Espacio detectado a la derecha mayor a 100 cm. Girando a la derecha.")
-                set_angle(135)  # Ajustar ángulo para girar a la derecha
-                GPIO.output(MOTOR_IN1, GPIO.LOW)
-                GPIO.output(MOTOR_IN2, GPIO.LOW)
-                pwm_motor.ChangeDutyCycle(25)
-                time.sleep(1)  # Tiempo del giro
-                GPIO.output(MOTOR_IN1, GPIO.HIGH)
-                GPIO.output(MOTOR_IN2, GPIO.LOW)
-                set_angle(90)  # Volver el servo a posición inicial
+void parar() {
+  analogWrite(en, 0);  // Detener el motor
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  giro.write(100);  // Asegurarse de que el servo esté en posición neutral
+  Serial.println("Carro detenido");
+}
 
-            if distancia_izquierda > 100:
-                print("Espacio detectado a la izquierda mayor a 100 cm. Girando a la izquierda.")
-                set_angle(45)  # Ajustar ángulo para girar a la izquierda
-                GPIO.output(MOTOR_IN1, GPIO.LOW)
-                GPIO.output(MOTOR_IN2, GPIO.LOW)
-                pwm_motor.ChangeDutyCycle(25)
-                time.sleep(1)  # Tiempo del giro
-                GPIO.output(MOTOR_IN1, GPIO.HIGH)
-                GPIO.output(MOTOR_IN2, GPIO.LOW)
-                set_angle(90)  # Volver el servo a posición inicial
+void retro() { // Condigura el motor para que cambie los polos del motor y la potencia del mismo
+  analogWrite(en, 200);
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+}
 
-        except Exception as e:
-            print(f"Error en giro_automatico: {e}")
+void gi() { // Ingresa el ángulo de giro para la izquierda
+  giro.write(55);
+}
 
-        time.sleep(0.25)
+void gd() { // Ingresa el ángulo de giro para la derecha
+  giro.write(143);
+}
 
-# Función para iniciar el motor automáticamente
-def motor_auto():
-    try:
-        GPIO.output(MOTOR_IN1, GPIO.HIGH)  # Establecer IN1 en alto
-        GPIO.output(MOTOR_IN2, GPIO.LOW)  # Establecer IN2 en bajo
-        pwm_motor.ChangeDutyCycle(25)  # Establecer el ciclo de trabajo del motor en 25%
-        print("Motor en marcha automática")
-    except Exception as e:
-        print(f"Error en motor_auto: {e}")
+void corregir () { // Configuración para la medición de la distancia del frente
+  while (frente < 8) {
+    Serial.println("arreglo de medición del frente");
+    Serial.print("Frente:");
+    Serial.println(frente);
+    frente = sonar1.ping_cm();
+  }
 
-print("\n")
-print("El servo motor inicia en posición vertical (90 grados).")
-print("El motor DC arranca automáticamente a velocidad reducida.")
-print("\n")
+  while (derecha == 0) { // Configuración para la medición de la distancia de la derecha
+    Serial.println("arreglo de medición de la derecha");
+    derecha = sonar2.ping_cm();
 
-set_angle(90)  # Establecer el ángulo inicial del servo en 90 grados
+    Serial.print("Derecha:");
+    Serial.println(derecha);
+  }
 
-# Iniciar los hilos para el giro automático y arranque del motor
-threading.Thread(target=giro_automatico, daemon=True).start()
-#threading.Thread(target=motor_auto, daemon=True).start()
-
-try:
-    while True:  # Mantener el programa corriendo indefinidamente
-        time.sleep(1)
-
-finally:
-    pwm_servo.stop()  # Detener el PWM del servo
-    pwm_motor.stop()  # Detener el PWM del motor
-    GPIO.cleanup()  # Limpiar la configuración de GPIO
+  while (izquierda == 0) { // Configuración para la medición de la distancia de la izquierda
+    Serial.println("arreglo de medición de la izquierda");
+    izquierda = sonar3.ping_cm();
+    Serial.print("Izquierda:");
+    Serial.println(izquierda);
+  }
+}
