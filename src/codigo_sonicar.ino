@@ -60,9 +60,7 @@ void loop() {
   delay(25);
 
   if (frente < 60 && derecha > 100) {
-    /* if ((td2 - td1) > 1000 ) {
-       giros = giros + 1;
-      }*/
+
     giros = giros + 1;
     Serial.println("Primer if");
     gd();
