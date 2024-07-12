@@ -1,13 +1,24 @@
 # SONICAR
 # Bitácora
+
 Nosotros, Andrés Casenave y José Chacón, somos estudiantes de 4to año del Colegio Simón Bolívar II. Al conocer de este concurso nos constituimos como un equipo de trabajo con el sueño de aprender sobre esta competencia, conocer a nuevas personas, trabajar juntos para cumplir un objetivo y representar al colegio. Sin embargo, nuestros conocimientos eran limitados y representó un gran reto para nosotros adquirir todas las destrezas que exigía este concurso, por lo que solicitamos ayuda a nuestros entrenadores para adquirir conocimientos tanto de diseño, robótica, mecánica, electrónica y programación. Han sido unos arduos meses de trabajo y estudio para resolver cada uno de los retos que impone tener un carro autónomo.
+
 Al inicio del proyecto, nuestro primer contratiempo, fue no conseguir al tercer compañero que quisiera comprometerse en esta aventura de aprendizaje, por lo que terminamos decidiendo llevar a cabo este reto con un integrante menos. Esto si bien lo vimos al principio como un obstáculo, luego nos dimos cuenta de la oportunidad que esto representaba al involucrarnos siempre los dos en cada etapa del proceso. 
+
 Los primeros meses nos enfocamos en el diseño del carro usando el programa de AutoCAD como herramienta principal; y una vez finalizado el diseño procedimos a imprimirlo en 3D en la impresora del colegio.  Luego pasamos a ensamblar las piezas e ir probándolas para su correcto ensamblaje y la coordinación de estas con el resto de los componentes que debía tener el carro. Los meses pasaron y el carro iba avanzando, siendo sometido a varios cambios durante el proceso entre los que se incluyen la distribución de los diferentes componentes. Finalmente logramos que funcionara y allí comenzamos con la programación del mismo, utilizando el Raspberry Pi 4 como el cerebro del robot.
+
 Nuestra primera competencia se acercaba y nos sentíamos preparados ya que el robot funcionaba y cumplía con los requerimientos iniciales de la competencia de dar 3 vueltas en nuestra pista. El día de la competencia llegó y en el momento de posicionar el robot en la pista de la competencia en el IEA, el carro no se movió. Nos sentimos frustrados, pero logramos superar este obstáculo al encontrar que un cable era el que no permitía su funcionamiento, al igual que una falta de una conexión al internet. 
+
 Luego de esta primera experiencia decidimos rediseñar totalmente el carro, basándonos en el canal T-Lab para el diseño del mismo. Decidimos imprimirlo de nuevo, pero al colocar las piezas del antiguo carro en el nuevo, nos vimos limitados en el espacio que teníamos, así que decidimos crear un segundo piso, eliminando porciones que no fueran necesarias en las que irían los componentes más livianos del carro, superando así este problema. Para evitar el inconveniente que tuvimos con el Raspberry Pi, decidimos cambiarlo por un Arduino UNO, el cual nos facilitó la programación debido a que su lenguaje de programación era más sencillo. Así mismo, al cambiar el diseño del carro también hubo que cambiarle el tamaño de las ruedas para que el carro no rozara en el piso.
+
 El día de nuestra segunda competencia, ahora en Maracay, llegó y a la hora de poner el carro en la pista, este tuvo un buen desempeño y el jurado nos otorgó gratamente un buen puntaje y el puesto de primer lugar en nuestra categoría. Sin embargo, también nos topamos con un inconveniente que fue que nuestra cámara principal se sobrecalentaba y terminó por quemarse junto nuestro Arduino UNO. Al día siguiente, con ayuda de nuestros entrenadores, nos dimos cuenta que un par de componentes de la cámara se quemaron causando así que el Arduino se quemara junto a este. Por suerte contábamos con un Arduino Mega de respaldo, que a diferencia del Arduino UNO, contiene una mayor cantidad de pines disponibles.
+
 Al juntar todos los componentes al nuevo diseño del carro, funcionó nuevamente de manera exitosa, y gracias a que se le agregó un piso más, logramos tener un mejor orden de los cables y el resto de los componentes teniendo así un prototipo de carro más organizado y agradable a la vista. Estábamos listos para nuestra tercera competencia.
+
 En nuestra tercera experiencia compitiendo, el carro no tuvo el desempeño esperado, chocaba. Luego de analizar las posibles razones nos dimos cuenta que la pista no contaba con las medidas que teníamos establecidas para la competencia y con las cuales habíamos practicado. Sumado a esto, perdimos una de las cámaras, previo al torneo. Tuvimos entonces in situ que desarrollar un código totalmente nuevo solo para esta ocasión, contando con un tiempo mucho menor al que estábamos acostumbrados. 
+
+Por último, tenemos un nuevo diseño en prueba, que nos permite ponerle más componentes al carro debido al amplio espacio que tiene a diferencia del anterior modelo. Decidimos cambiar el carro ya que con la implementación del Raspberry Pi 4 para el funcionamiento de la cámara, requeríamos de un espacio grande para tener el Arduino Mega y el Raspberry funcionando al mismo tiempo y tener el desempeño deseado.
+
 Hoy en día, SONICAR sigue estando en modificaciones ya que es un prototipo que ha ido evolucionando y adquiriendo cada vez una mayor autonomía. Estamos aprendiendo y preparándonos para los nuevos retos que establece la competencia, no solo en el establecimiento de sensores para el reconocimiento de colores y la decisión autónoma de cómo superar los obstáculos, sino en todas las estrategias que debemos considerar al momento de la programación y toma de decisiones para el funcionamiento autónomo del mismo. Sin lugar a dudas esta ha sido una maravillosa experiencia de creación, ensayo, observación y aprendizaje a partir de las vivencias.
 
 ## Descripción del Proyecto
@@ -29,26 +40,30 @@ SONICAR es un proyecto de robótica desarrollado por estudiantes de bachillerato
        1.9        Tablón
        1.10      Base de servomotor
 
-       ### 2. Componentes Eléctricos:
-       2.1 	Arduino Mega
-       2.2 	Raspberry Pi 4
-       2.3	 L298N
-       2.4 	Sensores de ultrasonido (Hc-sr04) x3
-       2.5  Varios cables macho-macho, hembra-hembra y macho-hembra
-       2.6  Base de pila de litio
-       2.7  Protoboard
+### 2. Componentes Eléctricos:
+2.1  Arduino Mega
+2.2  Raspberry Pi 4
+2.3  L298N
+2.4  Sensores de ultrasonido (Hc-sr04) x3
+2.5  Varios cables macho-macho, hembra-hembra y macho-hembra
+2.6  Base de pila de litio
+2.7  Protoboard
+2.8  Raspberri Pi OV5647
 
 
-       ### 3. 	Componentes Mecánicos:
-      3.1	Ruedas x 4 
-      3.2 	Motor TT DC 3-6V
-      3.3 	Servomotor (SG90)
+### 3. Componentes Mecánicos:
+3.1	Ruedas x 4 
+3.2 	Motor TT DC 3-6V
+3.3 	Servomotor (SG90)
 
 ### Arduino Mega
 El Arduino Mega es una placa de desarrollo de bajo costo, que permite realizar proyectos de programación y electrónica. Cuenta con un microcontrolador de 8 bits, capacidad de memoria limitada pero suficiente para muchos proyectos, y múltiples puertos para conectarse a otros componentes. En este proyecto, el Arduino Mega actúa como el cerebro del vehículo, tomando decisiones basadas en la información proporcionada por los sensores y controlando los motores. La simplicidad y versatilidad del Arduino Mega lo convierten en una plataforma ideal para proyectos educativos y de prototipado.
 
 ### Raspberry Pi 4
 El Raspberry Pi 4 es una computadora de bajo costo y alto rendimiento, diseñada para proyectos de midleware. Equipada con un procesador ARM Cortex-A72 de 64 bits, ofrece una mayor capacidad de memoria y rendimiento en comparación con versiones anteriores. Además, cuenta con múltiples puertos USB, GPIO, y soporte para doble pantalla 4K, lo que permite conectarse a una amplia variedad de componentes y periféricos. En este proyecto, el Raspberry Pi 4 actúa como el centro de procesamiento avanzado, manejando tareas complejas y ejecutando algoritmos que requieren mayor poder de cómputo. La potencia y versatilidad del Raspberry Pi 4 lo convierten en una plataforma ideal para proyectos avanzados de prototipado, educación y desarrollo tecnológico.
+
+### Raspberri Pi OV5647
+La cámara Raspberry Pi OV5647 es un modelo de cámara de alta calidad, que tiene una resolución de 5 megapíxeles, esta es capaz de capturar imágenes nítidas y claras. Su ramalazo compacto la ha hecho ideal para nuestro proyecto, además de su facilidad de uso, versatilidad y bajo costo.
 
 ### Sensores de Ultrasonido (HC-SR04) 
 Se utilizan tres sensores de ultrasonido HC-SR04 para la detección de obstáculos. Estos sensores miden la distancia a objetos cercanos emitiendo un pulso de sonido ultrasonido y midiendo el tiempo que tarda en reflejarse. La distancia se calcula en función del tiempo que tarda el sonido en viajar hacia el objeto y regresar al sensor, permitiendo al vehículo detectar obstáculos y navegar de manera autónoma. Los sensores de ultrasonido son ampliamente utilizados en robótica debido a su precisión y bajo costo, y en este proyecto, son fundamentales para la capacidad de navegación del vehículo.
