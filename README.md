@@ -27,11 +27,11 @@ SONICAR es un proyecto de robótica desarrollado por estudiantes de bachillerato
 ## Componentes Utilizados
 ### Lista de Materiales (BOM)
 ### 1. Estructura:
-1.1 4x columnas principales 7mm x 7mm x 6cm
-1.2 Chasis
-1.3 Alambre
-1.4 Pasantes x 2
-1.5 Argollas x 2
+** 1.1 4x columnas principales 7mm x 7mm x 6cm **
+** 1.2 Chasis **
+** 1.3 Alambre **
+** 1.4 Pasantes x 2 **
+1.5 Argollas x 2 
 1.6 Extensiones x 2
 1.7 Tapas x2
 1.8 Bases de tapas x2
