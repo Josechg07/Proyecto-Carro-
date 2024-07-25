@@ -160,3 +160,8 @@ o	Ejecutar el código cargándolo en el Arduino Mega utilizando el Arduino IDE.
 •	Los scripts en Arduino no requieren compilación adicional fuera del entorno de desarrollo Arduino IDE.
 •	Cargar directamente el código de control en el Arduino Mega desde el Arduino IDE.
 
+
+# Installation :books:
+### System Requirements
+* [Beak](https://beakit.com/)
+<img src="https://t.bkit.co/w_66a28fc18c347.gif" />
