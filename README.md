@@ -48,18 +48,29 @@ SONICAR es un proyecto de robótica desarrollado por estudiantes de bachillerato
 1.10 Base de servomotor
 
 ### 2. Componentes Eléctricos:
+
 2.1 Arduino Mega
+
 2.2 Raspberry Pi 4
+
 2.3 L298N
+
 2.4 Sensores de ultrasonido (Hc-sr04) x3
+
 2.5 Varios cables macho-macho, hembra-hembra y macho-hembra
+
 2.6 Base de pila de litio
+
 2.7 Protoboard
+
 2.8 Raspberri Pi OV5647
 
 ### 3. Componentes Mecánicos:
+
 3.1 Ruedas x 4
+
 3.2 Motor TT DC 3-6V
+
 3.3 Servomotor (SG90)
 
 
