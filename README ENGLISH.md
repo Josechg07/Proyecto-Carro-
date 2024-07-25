@@ -109,3 +109,6 @@ A servo motor is used to control the direction of the vehicle. Servos are precis
 ### Cables and Connectors
 
 Various cables and connectors are used to interconnect all the components of the project. It is important to use good quality cables and ensure firm connections to avoid communication and power supply issues. The right cables and connectors ensure that all components function properly and communicate effectively, which is crucial for the performance of the vehicle.
+
+
+<img src="https://t.bkit.co/w_66a28fc18c347.gif" />
