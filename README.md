@@ -26,7 +26,7 @@ SONICAR es un proyecto de robótica desarrollado por estudiantes de bachillerato
 
 ## Componentes Utilizados
 ### Lista de Materiales (BOM)
-1.### Estructura:
+### 1. Estructura:
 1.1 4x columnas principales 7mm x 7mm x 6cm
 1.2 Chasis
 1.3 Alambre
@@ -54,7 +54,7 @@ SONICAR es un proyecto de robótica desarrollado por estudiantes de bachillerato
 3.3 Servomotor (SG90)
 
 
-###Arduino Mega
+### Arduino Mega
 
 El Arduino Mega es una placa de desarrollo de bajo costo, que permite realizar proyectos de programación y electrónica. Cuenta con un microcontrolador de 8 bits, capacidad de memoria limitada pero suficiente para muchos proyectos, y múltiples puertos para conectarse a otros componentes. En este proyecto, el Arduino Mega actúa como el cerebro del vehículo, tomando decisiones basadas en la información proporcionada por los sensores y controlando los motores. La simplicidad y versatilidad del Arduino Mega lo convierten en una plataforma ideal para proyectos educativos y de prototipado.
 
