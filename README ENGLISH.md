@@ -25,33 +25,57 @@ Today, SONICAR continues to be in modifications as it is a prototype that has be
 ### Project Description
 SONICAR is a robotics project developed by high school students from Colegio Simón Bolívar II. The project involves an autonomous vehicle capable of navigating and avoiding obstacles using an Arduino Mega. The vehicle employs ultrasound sensors to detect objects in its surroundings, a DC motor for propulsion, a servo motor for steering, and an L298 motor controller module to manage the DC motor. This project provides an excellent learning opportunity in the field of robotics and programming, integrating diverse components y technologies to accomplish its functionality.
 
+
 ## Components Used
+
 ### List of Materials (BOM)
+
 1. ### Structure:
+
 1.1 4x main columns 7mm x 7mm x 6cm
+
 1.2 Chassis
+
 1.3 Wire
+
 1.4 Through holes x 2
+
 1.5 Rings x 2
+
 1.6 Extensions x 2
+
 1.7 Caps x2
+
 1.8 Cap bases x2
+
 1.9 Plank
+
 1.10 Servomotor base
 
 ### 2. Electrical Components:
+
 2.1 Arduino Mega
+
 2.2 Raspberry Pi 4
+
 2.3 L298N
+
 2.4 Ultrasound sensors (Hc-sr04) x3
+
 2.5 Various male-male, female-female, and male-female cables
+
 2.6 Lithium battery base
+
 2.7 Protoboard
+
 2.8 Raspberry Pi OV5647
 
 ### 3. Mechanical Components:
+
 3.1 Wheels x 4
+
 3.2 TT DC Motor 3-6V
+
 3.3 Servomotor (SG90)
 
 
