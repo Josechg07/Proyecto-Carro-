@@ -1,0 +1,117 @@
+
+# SONICAR
+## Registro di bordo
+
+
+Noi, Andrés Casenave e José Chacón, siamo studenti del quarto anno presso il Colegio Simón Bolívar II. Dopo aver appreso di questa competizione, abbiamo formato una squadra con il sogno di imparare sul concorso, incontrare nuove persone, lavorare insieme per raggiungere un obiettivo e rappresentare la nostra scuola. Tuttavia, le nostre conoscenze erano limitate e questo ha rappresentato una grande sfida per acquisire tutte le competenze richieste da questa competizione, così abbiamo cercato l'aiuto del nostro allenatore per acquisire conoscenze in design, robotica, meccanica, elettronica e programmazione. Sono stati mesi di duro lavoro e molto studio per riuscire a superare le sfide legate alla costruzione di un'auto autonoma.
+
+All'inizio del progetto, il nostro primo ostacolo è stato non trovare un terzo compagno di squadra che volesse impegnarsi in questa avventura di apprendimento, così abbiamo deciso di affrontare questa sfida con un membro in meno. Anche se inizialmente lo abbiamo visto come un ostacolo, in seguito ci siamo resi conto dell'opportunità che rappresentava coinvolgere sempre entrambi in ogni fase del processo.
+
+Nei primi mesi ci siamo concentrati sulla progettazione dell'auto utilizzando AutoCAD come strumento principale; una volta completato il design, abbiamo proceduto alla stampa 3D utilizzando la stampante della scuola. Poi siamo passati ad assemblare i pezzi e testarli per un corretto montaggio e coordinamento con il resto dei componenti che l'auto doveva avere. Sono passati mesi e l'auto stava progredendo, subendo diversi cambiamenti durante il processo, inclusa la distribuzione dei vari componenti. Infine, siamo riusciti a farla funzionare e poi abbiamo iniziato a programmarla, utilizzando il Raspberry Pi 4 come cervello del robot.
+
+La nostra prima competizione si stava avvicinando e ci sentivamo preparati poiché il robot funzionava e soddisfaceva i requisiti iniziali della competizione, ovvero completare 3 giri sulla nostra pista. Il giorno della competizione arrivò e quando posizionammo il robot sulla pista all'IEA, l'auto non si mosse. Ci siamo sentiti frustrati, ma abbiamo superato questo ostacolo scoprendo che un cavo impediva il suo funzionamento, così come la mancanza di connessione a Internet che non era consentita, e fino a quel momento non ne eravamo consapevoli.
+
+Dopo questa prima esperienza, abbiamo deciso di riprogettare completamente l'auto, basandoci sul canale T-Lab per il design. Abbiamo deciso di stamparla di nuovo, ma quando abbiamo posizionato le parti della vecchia auto su quella nuova, ci siamo trovati limitati nello spazio a disposizione, quindi abbiamo deciso di creare un secondo piano, rimuovendo le parti non necessarie, sul quale sarebbero stati posizionati i componenti più leggeri dell'auto, superando così questo problema.
+
+Per evitare l'inconveniente che abbiamo avuto con il Raspberry Pi, abbiamo deciso di sostituirlo con un Arduino UNO, il che ha facilitato la programmazione perché il suo linguaggio di programmazione era più semplice. Allo stesso modo, cambiando il design dell'auto, è stato anche necessario modificare la dimensione delle ruote in modo che l'auto non sfregasse contro il pavimento.
+
+Arrivò il giorno della nostra seconda competizione, questa volta a Maracay, e quando abbiamo messo l'auto sulla pista, ha funzionato bene e la giuria ci ha assegnato con piacere un buon punteggio e il primo posto nella nostra categoria. Tuttavia, abbiamo anche incontrato un inconveniente: la nostra fotocamera principale si è surriscaldata e si è bruciata insieme all'Arduino UNO. Il giorno successivo, con l'aiuto del nostro allenatore, abbiamo verificato i componenti della fotocamera che si erano bruciati causando la bruciatura dell'Arduino. Fortunatamente, avevamo un Arduino Mega di riserva, che aveva più pin a nostra disposizione. Dopo aver installato tutti i componenti nel nuovo design, ha funzionato con successo proprio come prima e grazie a questo secondo piano, siamo riusciti a ottenere una migliore gestione dei cavi. Eravamo pronti per la nostra terza competizione. 
+
+In our third competing experience, the car did not perform as expected, it crashed. After analyzing the possible reasons, we realized that the track did not have the measures we had established for the competition and with which we had practiced. Added to this, we lost one of the cameras before the tournament. We then had to develop a completely new code on the spot for this occasion, counting with much less time than we were used to.
+
+Lastly, we have a new design under test, which allows us to put more components on the car due to the wide space it has compared to the previous prototype. We decided to change the car since with the implementation of the Raspberry Pi 4 for the operation of the camera, we required a large space to have the Arduino Mega and Raspberry functioning at the same time and have the desired performance.
+
+Today, SONICAR continues to be in modifications as it is a prototype that has been evolving and gaining more autonomy. We are learning and preparing for the new challenges set by the competition, not only in setting up sensors for color recognition and making autonomous decisions on how to overcome obstacles, but in all the strategies we must consider at the time of programming and making decisions for the autonomous operation of the same. Without a doubt, this has been a wonderful experience of creation, trial, observation and learning through our participation.
+
+### Project Description
+SONICAR is a robotics project developed by high school students from Colegio Simón Bolívar II. The project involves an autonomous vehicle capable of navigating and avoiding obstacles using an Arduino Mega. The vehicle employs ultrasound sensors to detect objects in its surroundings, a DC motor for propulsion, a servo motor for steering, and an L298 motor controller module to manage the DC motor. This project provides an excellent learning opportunity in the field of robotics and programming, integrating diverse components y technologies to accomplish its functionality.
+
+
+## Components Used
+
+### List of Materials (BOM)
+
+1. ### Structure:
+
+1.1 4x main columns 7mm x 7mm x 6cm
+
+1.2 Chassis
+
+1.3 Wire
+
+1.4 Through holes x 2
+
+1.5 Rings x 2
+
+1.6 Extensions x 2
+
+1.7 Caps x2
+
+1.8 Cap bases x2
+
+1.9 Plank
+
+1.10 Servomotor base
+
+### 2. Electrical Components:
+
+2.1 Arduino Mega
+
+2.2 Raspberry Pi 4
+
+2.3 L298N
+
+2.4 Ultrasound sensors (Hc-sr04) x3
+
+2.5 Various male-male, female-female, and male-female cables
+
+2.6 Lithium battery base
+
+2.7 Protoboard
+
+2.8 Raspberry Pi OV5647
+
+### 3. Mechanical Components:
+
+3.1 Wheels x 4
+
+3.2 TT DC Motor 3-6V
+
+3.3 Servomotor (SG90)
+
+
+### Arduino Mega
+
+The Arduino Mega is a low-cost development board that allows for programming and electronics projects. It features an 8-bit microcontroller, limited but sufficient memory capacity for many projects, and multiple ports for connecting to other components. In this project, the Arduino Mega acts as the brain of the vehicle, making decisions based on information provided by the sensors and controlling the motors. The simplicity and versatility of the Arduino Mega make it an ideal platform for educational and prototyping.
+
+### Raspberry Pi 4
+
+The Raspberry Pi 4 is a low-cost, high-performance computer, designed for middleware projects. Equipped with a 64-bit ARM Cortex-A72 processor, it offers increased memory capacity and performance compared to previous versions. Additionally, it has multiple USB ports, GPIO, and support for dual 4K displays, allowing it to connect to a wide variety of components and peripherals. In this project, the Raspberry Pi 4 acts as the advanced processing center, handling complex tasks and running algorithms that require a significant computing power. The power and versatility of the Raspberry Pi 4 transform it in a plataform ideal for advanced protopyping proyects, educational proyects, and technological development. 
+### Raspberry Pi OV5647
+
+The Raspberry Pi OV5647 camera is a high-quality camera model, which has a resolution of 5 megapixels, capable of capturing sharp and clear images. Its compact size has made it ideal for our project, in addition to its ease of use, versatility, and low cost.
+
+### Ultrasound Sensors (HC-SR04)
+
+Three HC-SR04 ultrasound sensors are used for obstacle detection. These sensors measure the distance to nearby objects by emitting an ultrasound sound pulse and measuring the time it takes to reflect back. The distance is calculated based on the time it takes for the sound to travel to the object and return to the sensor, allowing the vehicle to detect obstacles and navigate autonomously. Ultrasound sensors are widely used in robotics due to their accuracy and low cost, and in this project, they are fundamental for the navigational capacity of the vehicle.
+
+### Motor Controller Module (L298N)
+
+The L298 motor controller allows controlling the speed and direction of a DC motor. This module receives signals from the Arduino and translates them into commands that the motor can understand, allowing precise control of the vehicle's propulsion. The L298N is a dual H-Bridge motor controller that can handle two DC motors, but in this project, only one is used. Its ability to handle high voltages and currents makes it ideal for robotics and small-scale automotive projects.
+
+### DC Motor
+
+A direct current (DC) motor is an electric motor that operates on direct current. In this project, the DC motor is used to propel the vehicle. The speed and direction of the motor are controlled through the L298 module, allowing the vehicle to move forward or backward as needed. DC motors are known for their simplicity and efficiency and are a popular choice for robotics projects due to their easy control and reliable performance.
+
+### Servo Motor
+
+A servo motor is used to control the direction of the vehicle. Servos are precision motors that can rotate to specific positions, which is useful for applications requiring precise movements. In this case, the servo motor is used to turn the front wheels of the vehicle, allowing it to change direction when obstacles are detected. Servo motors are essential in robotics for their precise control capability, which allows for exact steering and efficient navigation.
+
+### Cables and Connectors
+
+Various cables and connectors are used to interconnect all the components of the project. It is important to use good quality cables and ensure firm connections to avoid communication and power supply issues. The right cables and connectors ensure that all components function properly and communicate effectively, which is crucial for the performance of the vehicle.
+
+# Installation :books:
+### System Requirements
+* [Beak](https://beakit.com/)
+<img src="https://t.bkit.co/w_66a28fc18c347.gif" />
