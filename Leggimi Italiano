@@ -19,41 +19,46 @@ Arrivò il giorno della nostra seconda competizione, questa volta a Maracay, e q
 
 In our third competing experience, the car did not perform as expected, it crashed. After analyzing the possible reasons, we realized that the track did not have the measures we had established for the competition and with which we had practiced. Added to this, we lost one of the cameras before the tournament. We then had to develop a completely new code on the spot for this occasion, counting with much less time than we were used to.
 
-Lastly, we have a new design under test, which allows us to put more components on the car due to the wide space it has compared to the previous prototype. We decided to change the car since with the implementation of the Raspberry Pi 4 for the operation of the camera, we required a large space to have the Arduino Mega and Raspberry functioning at the same time and have the desired performance.
+Durante la nostra terza esperienza di competizione, l'auto non ha funzionato come previsto, si è schiantata. Dopo aver analizzato le possibili cause, ci siamo resi conto che la pista non aveva le misure che avevamo stabilito per la competizione e con cui ci eravamo allenati. A questo si è aggiunto il fatto che abbiamo perso una delle fotocamere prima del torneo. Abbiamo quindi dovuto sviluppare un codice completamente nuovo sul posto per questa occasione, contando su molto meno tempo rispetto a quello a cui eravamo abituati.
 
-Today, SONICAR continues to be in modifications as it is a prototype that has been evolving and gaining more autonomy. We are learning and preparing for the new challenges set by the competition, not only in setting up sensors for color recognition and making autonomous decisions on how to overcome obstacles, but in all the strategies we must consider at the time of programming and making decisions for the autonomous operation of the same. Without a doubt, this has been a wonderful experience of creation, trial, observation and learning through our participation.
+Infine, abbiamo un nuovo design in fase di test, che ci permette di mettere più componenti sull'auto grazie allo spazio ampio rispetto al prototipo precedente. Abbiamo deciso di cambiare l'auto poiché, con l'implementazione del Raspberry Pi 4 per il funzionamento della fotocamera, richiedevamo un grande spazio per far funzionare contemporaneamente l'Arduino Mega e il Raspberry e ottenere le prestazioni desiderate.
 
-### Project Description
-SONICAR is a robotics project developed by high school students from Colegio Simón Bolívar II. The project involves an autonomous vehicle capable of navigating and avoiding obstacles using an Arduino Mega. The vehicle employs ultrasound sensors to detect objects in its surroundings, a DC motor for propulsion, a servo motor for steering, and an L298 motor controller module to manage the DC motor. This project provides an excellent learning opportunity in the field of robotics and programming, integrating diverse components y technologies to accomplish its functionality.
+Oggi, SONICAR continua ad essere in fase di modifiche in quanto è un prototipo che è stato in continua evoluzione e sta acquisendo sempre più autonomia. Stiamo imparando e preparando per le nuove sfide imposte dalla competizione, non solo nell'installazione dei sensori per il riconoscimento dei colori e nel prendere decisioni autonome su come superare gli ostacoli, ma anche in tutte le strategie che dobbiamo considerare al momento della programmazione e nel prendere decisioni per il funzionamento autonomo dello stesso. Senza dubbio, questa è stata un'esperienza meravigliosa di creazione, prova, osservazione e apprendimento attraverso la nostra partecipazione.
 
 
-## Components Used
+### Descrizione del Progetto
 
-### List of Materials (BOM)
+SONICAR è un progetto di robotica sviluppato da studenti delle superiori del Colegio Simón Bolívar II. Il progetto prevede un veicolo autonomo capace di navigare ed evitare ostacoli utilizzando un Arduino Mega. Il veicolo impiega sensori a ultrasuoni per rilevare oggetti nei suoi dintorni, un motore CC per la propulsione, un servomotore per lo sterzo e un modulo di controllo del motore L298 per gestire il motore CC. Questo progetto rappresenta un'eccellente opportunità di apprendimento nel campo della robotica e della programmazione, integrando diversi componenti e tecnologie per realizzare la sua funzionalità.
 
-1. ### Structure:
 
-1.1 4x main columns 7mm x 7mm x 6cm
+## Componenti Utilizzati
 
-1.2 Chassis
+### Lista dei Materiali (BOM)
 
-1.3 Wire
+1. ### Struttura:
 
-1.4 Through holes x 2
+1.1 4x colonne principali 7mm x 7mm x 6cm
 
-1.5 Rings x 2
+1.2 Telaio
 
-1.6 Extensions x 2
+1.3 Fili
 
-1.7 Caps x2
+1.4 Fori passanti x 2
 
-1.8 Cap bases x2
+1.5 Anelli x 2
 
-1.9 Plank
+1.6 Estensioni x 2
 
-1.10 Servomotor base
+1.7 Tappi x2
 
-### 2. Electrical Components:
+
+1.8 Basi dei tappi x2
+
+1.9 Asse
+
+1.10 Base del servomotore
+
+### 2. Componenti Elettrici:
 
 2.1 Arduino Mega
 
@@ -61,57 +66,58 @@ SONICAR is a robotics project developed by high school students from Colegio Sim
 
 2.3 L298N
 
-2.4 Ultrasound sensors (Hc-sr04) x3
+2.4 Sensori a ultrasuoni (Hc-sr04) x3
 
-2.5 Various male-male, female-female, and male-female cables
+2.5 Vari cavi maschio-maschio, femmina-femmina e maschio-femmina
 
-2.6 Lithium battery base
+2.6 Base per batteria al litio
 
 2.7 Protoboard
 
 2.8 Raspberry Pi OV5647
 
-### 3. Mechanical Components:
+### 3. Componenti Meccanici:
 
-3.1 Wheels x 4
+3.1 Ruote x 4
 
-3.2 TT DC Motor 3-6V
+3.2 Motore CC TT 3-6V
 
-3.3 Servomotor (SG90)
+3.3 Servomotore (SG90)
 
 
 ### Arduino Mega
 
-The Arduino Mega is a low-cost development board that allows for programming and electronics projects. It features an 8-bit microcontroller, limited but sufficient memory capacity for many projects, and multiple ports for connecting to other components. In this project, the Arduino Mega acts as the brain of the vehicle, making decisions based on information provided by the sensors and controlling the motors. The simplicity and versatility of the Arduino Mega make it an ideal platform for educational and prototyping.
+L'Arduino Mega è una scheda di sviluppo a basso costo che consente di realizzare progetti di programmazione ed elettronica. È dotato di un microcontrollore a 8 bit, con una capacità di memoria limitata ma sufficiente per molti progetti, e di più porte per la connessione ad altri componenti. In questo progetto, l'Arduino Mega funge da cervello del veicolo, prendendo decisioni basate sulle informazioni fornite dai sensori e controllando i motori. La semplicità e la versatilità dell'Arduino Mega lo rendono una piattaforma ideale per l'educazione e la prototipazione.
 
 ### Raspberry Pi 4
 
-The Raspberry Pi 4 is a low-cost, high-performance computer, designed for middleware projects. Equipped with a 64-bit ARM Cortex-A72 processor, it offers increased memory capacity and performance compared to previous versions. Additionally, it has multiple USB ports, GPIO, and support for dual 4K displays, allowing it to connect to a wide variety of components and peripherals. In this project, the Raspberry Pi 4 acts as the advanced processing center, handling complex tasks and running algorithms that require a significant computing power. The power and versatility of the Raspberry Pi 4 transform it in a plataform ideal for advanced protopyping proyects, educational proyects, and technological development. 
+Il Raspberry Pi 4 è un computer a basso costo e ad alte prestazioni, progettato per progetti middleware. Dotato di un processore ARM Cortex-A72 a 64 bit, offre una maggiore capacità di memoria e prestazioni rispetto alle versioni precedenti. Inoltre, dispone di più porte USB, GPIO e supporto per doppio display 4K, consentendogli di collegarsi a una vasta gamma di componenti e periferiche. In questo progetto, il Raspberry Pi 4 funge da centro di elaborazione avanzato, gestendo compiti complessi ed eseguendo algoritmi che richiedono una significativa potenza di calcolo. La potenza e la versatilità del Raspberry Pi 4 lo trasformano in una piattaforma ideale per progetti di prototipazione avanzata, progetti educativi e sviluppo tecnologico.
+
 ### Raspberry Pi OV5647
 
-The Raspberry Pi OV5647 camera is a high-quality camera model, which has a resolution of 5 megapixels, capable of capturing sharp and clear images. Its compact size has made it ideal for our project, in addition to its ease of use, versatility, and low cost.
+La fotocamera Raspberry Pi OV5647 è un modello di fotocamera di alta qualità, con una risoluzione di 5 megapixel, capace di catturare immagini nitide e chiare. Le sue dimensioni compatte l'hanno resa ideale per il nostro progetto, oltre alla sua facilità d'uso, versatilità e basso costo.
 
-### Ultrasound Sensors (HC-SR04)
+### Sensori a ultrasuoni (HC-SR04)
 
-Three HC-SR04 ultrasound sensors are used for obstacle detection. These sensors measure the distance to nearby objects by emitting an ultrasound sound pulse and measuring the time it takes to reflect back. The distance is calculated based on the time it takes for the sound to travel to the object and return to the sensor, allowing the vehicle to detect obstacles and navigate autonomously. Ultrasound sensors are widely used in robotics due to their accuracy and low cost, and in this project, they are fundamental for the navigational capacity of the vehicle.
+Vengono utilizzati tre sensori a ultrasuoni HC-SR04 per il rilevamento degli ostacoli. Questi sensori misurano la distanza dagli oggetti vicini emettendo un impulso sonoro a ultrasuoni e misurando il tempo impiegato per riflettere. La distanza viene calcolata in base al tempo impiegato dal suono per raggiungere l'oggetto e tornare al sensore, permettendo al veicolo di rilevare ostacoli e navigare autonomamente. I sensori a ultrasuoni sono ampiamente utilizzati nella robotica per la loro precisione e basso costo, e in questo progetto sono fondamentali per la capacità di navigazione del veicolo
 
-### Motor Controller Module (L298N)
+### Modulo di Controllo del Motore (L298N)
 
-The L298 motor controller allows controlling the speed and direction of a DC motor. This module receives signals from the Arduino and translates them into commands that the motor can understand, allowing precise control of the vehicle's propulsion. The L298N is a dual H-Bridge motor controller that can handle two DC motors, but in this project, only one is used. Its ability to handle high voltages and currents makes it ideal for robotics and small-scale automotive projects.
+Il controller del motore L298 permette di controllare la velocità e la direzione di un motore CC. Questo modulo riceve segnali dall'Arduino e li traduce in comandi che il motore può comprendere, consentendo un controllo preciso della propulsione del veicolo. L'L298N è un controller motore a doppio ponte H che può gestire due motori CC, ma in questo progetto ne viene utilizzato solo uno. La sua capacità di gestire alte tensioni e correnti lo rende ideale per progetti di robotica e automobilistica su piccola scala.
 
-### DC Motor
+### Motore DC
 
-A direct current (DC) motor is an electric motor that operates on direct current. In this project, the DC motor is used to propel the vehicle. The speed and direction of the motor are controlled through the L298 module, allowing the vehicle to move forward or backward as needed. DC motors are known for their simplicity and efficiency and are a popular choice for robotics projects due to their easy control and reliable performance.
+Un motore a corrente continua (DC) è un motore elettrico che funziona a corrente continua. In questo progetto, il motore DC viene utilizzato per la propulsione del veicolo. La velocità e la direzione del motore sono controllate tramite il modulo L298, consentendo al veicolo di muoversi avanti o indietro a seconda delle necessità. I motori DC sono noti per la loro semplicità ed efficienza e sono una scelta popolare nei progetti di robotica grazie alla loro facilità di controllo e prestazioni affidabili.
 
-### Servo Motor
+### Servo Motore
 
-A servo motor is used to control the direction of the vehicle. Servos are precision motors that can rotate to specific positions, which is useful for applications requiring precise movements. In this case, the servo motor is used to turn the front wheels of the vehicle, allowing it to change direction when obstacles are detected. Servo motors are essential in robotics for their precise control capability, which allows for exact steering and efficient navigation.
+Un servo motore viene utilizzato per controllare la direzione del veicolo. I servomotori sono motori di precisione che possono ruotare in posizioni specifiche, il che è utile per applicazioni che richiedono movimenti precisi. In questo caso, il servo motore viene utilizzato per girare le ruote anteriori del veicolo, consentendogli di cambiare direzione quando vengono rilevati ostacoli. I servomotori sono essenziali nella robotica per la loro capacità di controllo preciso, che permette una sterzatura esatta e una navigazione efficiente.
 
 ### Cables and Connectors
 
-Various cables and connectors are used to interconnect all the components of the project. It is important to use good quality cables and ensure firm connections to avoid communication and power supply issues. The right cables and connectors ensure that all components function properly and communicate effectively, which is crucial for the performance of the vehicle.
+Vengono utilizzati vari cavi e connettori per interconnettere tutti i componenti del progetto. È importante utilizzare cavi di buona qualità e garantire connessioni salde per evitare problemi di comunicazione e alimentazione. I cavi e i connettori giusti garantiscono che tutti i componenti funzionino correttamente e comunichino in modo efficace, il che è cruciale per le prestazioni del veicolo.
 
-# Installation :books:
-### System Requirements
+# Installazione :books:
+### Requisiti di Sistema
 * [Beak](https://beakit.com/)
 <img src="https://t.bkit.co/w_66a28fc18c347.gif" />
