@@ -22,26 +22,7 @@ Al ver todos los inconvenientes que teníamos con el carro, tomamos la decisión
 
 Al tener que adaptarnos a una nueva estructura, fue un poco desafiante al momento de ingresar el sistema de giro ya que eran dimensiones distintas. Ya teniendo los componentes conectados, empezaron unos nuevos problemas. Estos mayormente fueron por los cables, obligándonos a buscar soluciones para mantener a los cables unidos entre sí y a los componentes. Mientras resolvíamos estos inconvenientes, se nos presentaron otros problemas como  de comunicación de los componentes a la placa, problemas con el código, entre muchos otros; pero igualmente logramos resolver cada uno de estos inconvenientes que se nos fueron presentando.
 
-
-Nuestra primera competencia se acercaba y nos sentíamos preparados ya que el robot funcionaba y cumplía con los requerimientos iniciales de la competencia de dar 3 vueltas en nuestra pista. El día de la competencia llegó y en el momento de posicionar el robot en la pista de la competencia en el IEA, el carro no se movió. Nos sentimos frustrados, pero logramos superar este obstáculo al encontrar que un cable era el que no permitía su funcionamiento, al igual que la falta de la conexión a internet  la cual no estaba permitida y hasta ese momento no estábamos al tanto.
-
-
-Luego de esta primera experiencia decidimos rediseñar totalmente el carro, basándonos en el canal T-Lab para el diseño del mismo. Decidimos imprimirlo de nuevo, pero al colocar las piezas del antiguo carro en el nuevo, nos vimos limitados en el espacio que teníamos, así que decidimos crear un segundo piso, eliminando porciones que no fueran necesarias en las que irían los componentes más livianos del carro, superando así este problema.
-
-
-Para evitar el inconveniente que tuvimos con el Raspberry Pi, decidimos cambiarlo por un Arduino UNO, el cual nos facilitó la programación debido a que su lenguaje de programación era más sencillo. Así mismo, al cambiar el diseño del carro también hubo que cambiarle el tamaño de las ruedas para que el carro no rozara en el piso.
-
-
-El día de nuestra segunda competencia, ahora en Maracay, llegó y a la hora de poner el carro en la pista, este tuvo un buen desempeño y el jurado nos otorgó gratamente un buen puntaje y el puesto de primer lugar en nuestra categoría. Sin embargo, también nos topamos con un inconveniente que fue que nuestra cámara principal se sobrecalentaba y terminó por quemarse junto al Arduino UNO. Al día siguiente, con ayuda de nuestros entrenadores, validamos los componentes de la cámara que se quemaron causando así que el Arduino se quemara junto a este. Por suerte contábamos con un Arduino Mega de respaldo, este a diferencia del Arduino UNO, contiene una mayor cantidad de pines disponibles. Al juntar todos los componentes al nuevo diseño del carro, funcionó otra vez de manera exitosa, y gracias a que se le agregó un piso más, logramos tener un mejor orden de los cables y el resto de los componentes teniendo así un prototipo de carro más organizado y agradable a la vista. Estábamos listos para nuestra tercera competencia.
-
-
-En nuestra tercera experiencia compitiendo, el carro no tuvo el desempeño esperado, chocaba. Luego de analizar las posibles razones nos dimos cuenta que la pista no contaba con las medidas que teníamos establecidas para la competencia y con las cuales habíamos practicado. Sumado a esto, perdimos una de las cámaras, previo al torneo. Tuvimos entonces in situ que desarrollar un código totalmente nuevo solo para esta ocasión, contando con un tiempo mucho menor al que estábamos acostumbrados.
-
-
-Por último, tenemos un nuevo diseño en prueba, que nos permite ponerle más componentes al carro debido al amplio espacio que tiene a diferencia del prototipo anterior. Decidimos cambiar el carro ya que con la implementación del Raspberry Pi 4 para el funcionamiento de la cámara, requeríamos de un espacio grande para tener el Arduino Mega y el Raspberry funcionando al mismo tiempo y tener el desempeño deseado.
-
-
-Hoy en día, SONICAR sigue estando en modificaciones ya que es un prototipo que ha ido evolucionando y adquiriendo cada vez una mayor autonomía. Estamos aprendiendo y preparándonos para los nuevos retos que establece la competencia, no solo en el establecimiento de sensores para el reconocimiento de colores y la decisión autónoma de cómo superar los obstáculos, sino en todas las estrategias que debemos considerar al momento de la programación y toma de decisiones para el funcionamiento autónomo del mismo. Sin lugar a dudas esta ha sido una maravillosa experiencia de creación, ensayo, observación y aprendizaje a partir de las vivencias.
+Dentro de poco tenemos nuestra primera competencia y estamos nerviosos por los errores que nos da el robot que aparecen de un momento a otro, pero gracias a todo nuestro equipo y a nuestros coachs, podemos aprender sobre nuestros errores para mejorar para las siguientes competencias e incluso superar los desafios que se nos tocara afrontar.
 
 
 ### Descripción del Proyecto
