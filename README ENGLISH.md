@@ -17,6 +17,11 @@ This repository contains information about the sonicar team's robot for the 2025
 Hey, I'm Juan Pérez from Venezuela! This is my first time joining the WRO on the Future Engineers category and I am having a blast! I had never tried it before, but after starting, creating this robot has been an amazing experience. I love challenging myself! From crosswords to chess, you name it, and this whole experience feels like an even bigger challenge I'm ready to beat!
 
 
+# Photo Team
+
+
+| ![Photo Team](https://github.com/Josechg07/Proyecto-Carro-/blob/79d9914715bfaa9ab9f91b5d2c46b010a129eff2/t-photos/Foto%20equipo.jpg) |
+
 
 # Challenge
 The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams to create, 
