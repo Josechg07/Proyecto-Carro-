@@ -35,6 +35,10 @@ The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams t
 |:--:|:--:|
 | Left | Right |
 
+| ![Top](https://github.com/Josechg07/Proyecto-Carro-/blob/2da9dcb64fe6ef0a51f599abdc4eae7ae211af33/v-photos/Lado%20Superior.jpg) | ![Botton](https://github.com/Josechg07/Proyecto-Carro-/blob/2da9dcb64fe6ef0a51f599abdc4eae7ae211af33/v-photos/Lado%20Inferior.jpg) |
+|:--:|:--:|
+| Top | Botton |
+
 
 We, Andrés Casenave, José Chacón, and Juán Perez, are 5th and 4th year students at Colegio Simón Bolívar II. Upon learning about this competition, we formed a work team with the dream of learning about this challenge, meeting new people, working together to achieve a goal, and representing the school. However, our knowledge was limited, and it represented a great challenge for us to acquire all the skills required by this competition, which is why we asked our coaches for help in acquiring knowledge in design, robotics, mechanics, electronics, and programming. These have been arduous months of work and study to solve each of the challenges involved in building an autonomous car.
 
