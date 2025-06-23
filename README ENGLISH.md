@@ -35,7 +35,7 @@ The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams t
 |:--:|:--:|
 | Left | Right |
 
-| ![Top](https://github.com/Josechg07/Proyecto-Carro-/blob/2da9dcb64fe6ef0a51f599abdc4eae7ae211af33/v-photos/Lado%20Superior.jpg) | ![Botton](https://github.com/Josechg07/Proyecto-Carro-/blob/2da9dcb64fe6ef0a51f599abdc4eae7ae211af33/v-photos/Lado%20Inferior.jpg) |
+| ![Top](https://github.com/Josechg07/Proyecto-Carro-/blob/5a31ce0698bf67a05613ec5fa373fd08630c7c21/v-photos/Lado%20Superior.jpg) | ![Botton](https://github.com/Josechg07/Proyecto-Carro-/blob/2da9dcb64fe6ef0a51f599abdc4eae7ae211af33/v-photos/Lado%20Inferior.jpg) |
 |:--:|:--:|
 | Top | Botton |
 
