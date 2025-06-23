@@ -1,6 +1,32 @@
 # SONICAR
 # Logbook
 
+This repository contains information about the sonicar team's robot for the 2025 World Robot Olympiad (WRO) Future Engineers competition. The design of the robot was taked from thingiverse, but was adapted to the necesities of the team.
+
+# Team
+
+### José Ricardo Chacón
+
+
+
+### Andrés José Casenave
+
+
+
+### Juán Andrés Perez
+Hey, I'm Juan Pérez from Venezuela! This is my first time joining the WRO on the Future Engineers category and I am having a blast! I had never tried it before, but after starting, creating this robot has been an amazing experience. I love challenging myself! From crosswords to chess, you name it, and this whole experience feels like an even bigger challenge I'm ready to beat!
+
+
+
+# Challenge
+The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams to create, 
+
+
+
+
+# Photos of the robot eustakio
+
+
 
 We, Andrés Casenave, José Chacón, and Juán Perez, are 5th and 4th year students at Colegio Simón Bolívar II. Upon learning about this competition, we formed a work team with the dream of learning about this challenge, meeting new people, working together to achieve a goal, and representing the school. However, our knowledge was limited, and it represented a great challenge for us to acquire all the skills required by this competition, which is why we asked our coaches for help in acquiring knowledge in design, robotics, mechanics, electronics, and programming. These have been arduous months of work and study to solve each of the challenges involved in building an autonomous car.
 
