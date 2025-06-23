@@ -1,212 +1,327 @@
 # SONICAR
-# Bitácora
+# Logbook
+
+This repository contains information about the sonicar team's robot for the 2025 World Robot Olympiad (WRO) Future Engineers competition. The design of the robot was taked from thingiverse, but was adapted to the necesities of the team.
+
+# Team
+
+### José Ricardo Chacón
 
 
-Nosotros, Andrés Casenave, José Chacón y Juán Perez, somos estudiantes de 5to año y 4to año del Colegio Simón Bolívar II. Al conocer de este concurso nos constituimos como un equipo de trabajo con el sueño de aprender sobre esta competencia, conocer a nuevas personas, trabajar juntos para cumplir un objetivo y representar al colegio. Sin embargo, nuestros conocimientos eran limitados y representó un gran reto para nosotros adquirir todas las destrezas que exigía este concurso, por lo que solicitamos ayuda a nuestros entrenadores para adquirir conocimientos tanto de diseño, robótica, mecánica, electrónica y programación. Han sido unos arduos meses de trabajo y estudio para resolver cada uno de los retos que impone tener un carro autónomo.
+
+### Andrés José Casenave
 
 
-Al inicio del proyecto, al ya tener conocimiento por nuestra competencia se nos fue más sencillo el realizar el código del robot. Aún así, nos encontramos con varios inconvenientes ya que al tener tiempo sin realizar cambios en este y nutrirnos de conocimiento, tuvimos que volver a aprender sobre el código. La parte positiva es que al ya contar con conocimiento, fue más fácil el entender el código y el funcionamiento del robot, lo que también facilito los futuros arreglos que requeriría el robot.
+
+### Juán Andrés Perez
+Hey, I'm Juan Pérez from Venezuela! This is my first time joining the WRO on the Future Engineers category and I am having a blast! I had never tried it before, but after starting, creating this robot has been an amazing experience. I love challenging myself! From crosswords to chess, you name it, and this whole experience feels like an even bigger challenge I'm ready to beat!
 
 
-Los primeros meses nos enfocamos en el entendimiento de nuestro antiguo código y realizar un nuevo diseño del carro usando el programa de AutoCAD como herramienta principal, pero posteriormente empezamos a utilizar blender ya que es más versatil para realizar las figuras; y una vez finalizado el diseño procedimos a imprimirlo en 3D en la impresora del colegio. Luego pasamos a ensamblar las piezas e ir probándolas para su correcto ensamblaje y la coordinación de estas con el resto de los componentes que debía tener el carro. Los meses pasaron y el carro iba avanzando, siendo sometido a varios cambios durante el proceso entre los que se incluyen la distribución de los diferentes componentes. Finalmente logramos que funcionara y allí comenzamos con la programación del mismo, utilizando un Arduino Mega como cerebro del robot.
+# Photo Team
 
 
-Nuestros primeros inconvenientes se presentaron al momento de volver a probar el robot, ya que nos presento nuevos problemas como por ejemplo, que las pilas que estábamos utilizando se empezaron a inflar, lo que nos preocupó mucho y nos obligó a ver otras opciones de batería para evitar cualquier inconveniente. Al comprar las nuevas pilas nos dimos cuenta que nos hacía falta un conector para que lograra tener contacto hacia el L298N, por lo que terminamos haciendo más compras de lo planeado y terminó retardando el proceso de creación del robot.
+![Photo Team](https://github.com/Josechg07/Proyecto-Carro-/blob/79d9914715bfaa9ab9f91b5d2c46b010a129eff2/t-photos/Foto%20equipo.jpg)
 
 
-Luego, empezamos a probar nuevos componentes que nos pudieran dar con mejor exactitud las medidas de los sensores para que el robot trabaje de mejor manera. Igualmente al implementar estos componentes, algunos nos terminaron ayudando bastante como algunos nos terminaron dando muchos más inconvenientes que los que ya teníamos.
-
-
-Al ver todos los inconvenientes que teníamos con el carro, tomamos la decisión de crear uno nuevo, por lo que nos terminamos basando en un diseño ya creado y montado en "thingiverse" y le realizamos cambios a su estructura para lograr adaptarla a nuestras necesidades del carro. Esto nos ayudo a tener un robot personalizado, mejor adaptado para la competencia, y ya teniendo una buena base del diseño nos aseguraba una buena distribución de los componentes. Esto nos presentó com un ligero retardo ya que fue casi como empezar de cero, pero nos ayudó a tener una mejor estructura.
-
-
-Al tener que adaptarnos a una nueva estructura, fue un poco desafiante al momento de ingresar el sistema de giro ya que eran dimensiones distintas. Ya teniendo los componentes conectados, empezaron unos nuevos problemas. Estos mayormente fueron por los cables, obligándonos a buscar soluciones para mantener a los cables unidos entre sí y a los componentes. Mientras resolvíamos estos inconvenientes, se nos presentaron otros problemas como  de comunicación de los componentes a la placa, problemas con el código, entre muchos otros; pero igualmente logramos resolver cada uno de estos inconvenientes que se nos fueron presentando.
-
-Dentro de poco tenemos nuestra primera competencia y estamos nerviosos por los errores que nos da el robot que aparecen de un momento a otro, pero gracias a todo nuestro equipo y a nuestros coachs, podemos aprender sobre nuestros errores para mejorar para las siguientes competencias e incluso superar los desafios que se nos tocara afrontar.
-
-
-### Descripción del Proyecto
-SONICAR es un proyecto de robótica desarrollado por estudiantes de bachillerato del Colegio Simón Bolívar II. El proyecto consiste en un vehículo autónomo capaz de navegar y evitar obstáculos utilizando un Arduino Mega. El vehículo emplea sensores de ultrasonido para detectar objetos en su entorno, un motor DC para la propulsión, un servo motor para la dirección y un módulo controlador de motor L298 para manejar el motor DC. Este proyecto proporciona una excelente oportunidad de aprendizaje en el campo de la robótica y la programación, integrando varios componentes y tecnologías para lograr su funcionalidad.
+# Challenge
+The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams to create, 
 
 
 
 
-## Componentes Utilizados
-### Lista de Materiales (BOM)
-### 1. Estructura:
-1.1 6x columnas principales 4cm x 0.4cm x 0.4cm 
-
-1.2 Chasis 
-
-1.3 Alambre
-
-1.4 Silicón Caliente
-
-1.5 Barra de conexión x 2
-
-1.6 Tornillos x 19
-
-1.7 Conector de Rueda x 2
-
-1.8 Base de motor
+# Photos of the robot eustakio
 
 
-### 2. Componentes Eléctricos:
+| ![Front](https://github.com/Josechg07/Proyecto-Carro-/blob/12b60deac7c74e78cd3b6142d8d33f51107b93d8/v-photos/Lado%20Frontal.jpg) | ![Back](https://github.com/Josechg07/Proyecto-Carro-/blob/12b60deac7c74e78cd3b6142d8d33f51107b93d8/v-photos/Lado%20trasero.jpg) |
+|:--:|:--:|
+| Front | Back |
+
+| ![Left](https://github.com/Josechg07/Proyecto-Carro-/blob/12b60deac7c74e78cd3b6142d8d33f51107b93d8/v-photos/Lado%20izquierdo.jpg) | ![Right](https://github.com/Josechg07/Proyecto-Carro-/blob/12b60deac7c74e78cd3b6142d8d33f51107b93d8/v-photos/Lado%20derecho.jpg) |
+|:--:|:--:|
+| Left | Right |
+
+| ![Top](https://github.com/Josechg07/Proyecto-Carro-/blob/5a31ce0698bf67a05613ec5fa373fd08630c7c21/v-photos/Lado%20Superior.jpg) | ![Botton](https://github.com/Josechg07/Proyecto-Carro-/blob/2da9dcb64fe6ef0a51f599abdc4eae7ae211af33/v-photos/Lado%20Inferior.jpg) |
+|:--:|:--:|
+| Top | Botton |
+
+
+
+
+# Video of our robot on (*Youtube*)
+
+
+
+
+
+
+
+
+# Mechanic Management
+
+
+
+
+
+## Motor
+
+
+## Motor Driver
+
+
+## Steering
+
+
+## Servo Motor
+
+
+## Chasis
+
+
+
+# Movility Management
+
+
+## Li-Po Battery
+
+
+## Arduino Uno R4 WIFI
+
+
+## Camera HuskyLens
+
+
+## Protoboard
+
+
+
+
+# Code for each one of the component
+
+
+## DC Motor
+
+
+## Servo Motor
+
+
+## Camera HuskyLens
+
+
+
+# Obstacle Management
+
+## Open Round
+
+
+## Final Round
+
+
+## Cube Detection
+
+
+## Parking Wall Detection
+
+
+## Robot Construction Guide
+
+
+## Cost List
+
+
+
+
+We, Andrés Casenave, José Chacón, and Juán Perez, are 5th and 4th year students at Colegio Simón Bolívar II. Upon learning about this competition, we formed a work team with the dream of learning about this challenge, meeting new people, working together to achieve a goal, and representing the school. However, our knowledge was limited, and it represented a great challenge for us to acquire all the skills required by this competition, which is why we asked our coaches for help in acquiring knowledge in design, robotics, mechanics, electronics, and programming. These have been arduous months of work and study to solve each of the challenges involved in building an autonomous car.
+
+
+At the beginning of the project, since we already had knowledge from our previous competition, it was easier for us to write the robot's code. Still, we encountered several issues because after some time without making changes or reinforcing our knowledge, we had to relearn the code. The positive part is that having prior knowledge made it easier to understand the code and how the robot worked, which also made it easier to make future adjustments the robot would need.
+
+
+During the first months, we focused on understanding our old code and designing a new version of the car using AutoCAD as the main tool. Later, we started using Blender because it is more versatile for creating shapes. Once the design was complete, we proceeded to 3D print it with the school’s printer. Then we began assembling the pieces and testing them to ensure proper fit and coordination with the rest of the components the car required. As the months went by, the car progressed and underwent several changes, including the distribution of the various components. We finally got it to work and began programming it using an Arduino Mega as the brain of the robot.
+
+
+Our first setbacks came when testing the robot again, as it presented new problems. For example, the batteries we were using began to swell, which worried us a lot and forced us to look for other battery options to avoid any issues. After buying the new batteries, we realized we were missing a connector to make contact with the L298N, so we ended up making more purchases than planned, which delayed the robot-building process.
+
+
+We then began testing new components that could provide more accurate sensor measurements to improve the robot's performance. However, while implementing these components, some helped a lot, but others caused more problems than we already had.
+
+
+Given all the problems we were facing with the car, we decided to build a new one. We based it on an existing design published on Thingiverse and made structural changes to adapt it to our car’s needs. This helped us achieve a personalized robot, better suited for the competition, and with a solid design base that ensured better component distribution. This caused a slight delay since it was almost like starting from scratch, but it allowed us to have a better structure.
+
+
+Having to adapt to a new structure was a bit challenging when integrating the steering system, as the dimensions were different. Once the components were connected, new problems began—mostly related to the wiring—forcing us to find solutions to keep cables properly attached to each other and the components. While solving these issues, more appeared, such as communication problems between components and the board, code errors, among others; but we still managed to resolve each one as it came up.
+
+
+Our first competition is coming up soon, and we are nervous because the robot shows unexpected errors. But thanks to our whole team and our coaches, we are able to learn from our mistakes to improve for the next competitions and overcome the challenges that lie ahead.
+
+
+
+Project Description
+SONICAR is a robotics project developed by high school students from Colegio Simón Bolívar II. The project consists of an autonomous vehicle capable of navigating and avoiding obstacles using an Arduino Mega. The vehicle employs ultrasonic sensors to detect objects in its environment, a DC motor for propulsion, a servo motor for steering, and an L298 motor driver module to manage the DC motor. This project provides an excellent learning opportunity in the fields of robotics and programming, integrating various components and technologies to achieve its functionality.
+
+
+
+
+
+## Components Used
+
+### Bill of Materials (BOM)
+
+
+### 1. Structure:
+
+1.1 6x main columns 4cm x 0.4cm x 0.4cm
+1.2 Chassis
+1.3 Wire
+1.4 Hot glue
+1.5 Connection bars x 2
+1.6 Screws x 19
+1.7 Wheel connectors x 2
+1.8 Motor base
+
+
+### 2. Electrical Components:
 
 2.1 Arduino Mega
-
 2.2 L298N
+2.3 Ultrasonic sensor (HC-SR04)
+2.4 Laser sensors (VL53L0X-V2) x2
+2.5 Various male-male, female-female, and male-female jumper wires
+2.6 5600mAh lithium battery
+2.7 Sen breadboard
+2.8 Huskylens camera
 
-2.3 Sensor de ultrasonido (Hc-sr04)
+### 3. Mechanical Components:
 
-2.4 Sensores de Laser (VL53L0X-V2) x2
+3.1 Wheels x 4
+3.2 11V direct current (DC) motor
+3.3 Servo motor (SG90)
 
-2.5 Varios cables macho-macho, hembra-hembra y macho-hembra
-
-2.6 Pila de 5600mAH de litio
-
-2.7 Protoboard sen
-
-2.8 Cámara Huskylens
-
-
-### 3. Componentes Mecánicos:
-
-3.1 Ruedas x 4
-
-3.2 Motor corriente directa (DC) 11V
-
-3.3 Servomotor (SG90)
 
 
 ### Arduino Mega
 
-El Arduino Mega es una placa de desarrollo de bajo costo, que permite realizar proyectos de programación y electrónica. Cuenta con un microcontrolador de 8 bits, capacidad de memoria limitada pero suficiente para muchos proyectos, y múltiples puertos para conectarse a otros componentes. En este proyecto, el Arduino Mega actúa como el cerebro del vehículo, tomando decisiones basadas en la información proporcionada por los sensores y controlando los motores. La simplicidad y versatilidad del Arduino Mega lo convierten en una plataforma ideal para proyectos educativos y de prototipado.
+The Arduino Mega is a low-cost development board that allows users to create programming and electronics projects. It features an 8-bit microcontroller, limited memory but sufficient for many projects, and multiple ports to connect other components. In this project, the Arduino Mega acts as the brain of the vehicle, making decisions based on sensor input and controlling the motors. Its simplicity and versatility make the Arduino Mega an ideal platform for educational and prototyping projects.
 
 
-### Sensores Laser (VL53L0X-V2)
+### Laser Sensors (VL53L0X-V2)
 
-Se utilizan dos sensores lase VL53L0X-V2 para la medición de distancias. Estos sensores miden la distancia de objetos en un rango de distancia emitiendo un rayo de luz midiendo el tiempo que tarda entre su salida del componente hasta su regreso, permitiendo la detección de objetos y su desplazamiento de manera autónoma. Estos tipos de sensores son utilizados en este tipo de proyectos gracias a su precisión y menores inconvenientes comparados a otros sensores, y en este trabajo, son importantes para lograr la autonomía del vehículo.
-
-
-### Pila de 5600mAH de litio
-
-Se utilizó una pila de litio para lograr el funcionamiento de los componentes brindándoles corrientes para que puedan funcionar. Esta pila tiene una gran capacidad de carga y un voltaje considerable, lo que ayuda a evitar tener una gran cantidad de pilas y tener que cargarlas cada poco tiempo, volviendo mas eficiente el trabajo por ese aspecto.
+Two VL53L0X-V2 laser sensors are used for distance measurement. These sensors detect object distances within a range by emitting a light beam and measuring the time it takes to return. This allows for object detection and autonomous movement. These sensors are commonly used in projects like this due to their precision and fewer problems compared to other types. In this work, they are crucial to achieving vehicle autonomy.
 
 
-### Sensor de Ultrasonido (HC-SR04)
+### 5600mAh Lithium Battery
 
-Se utiliza un sensor de ultrasonido HC-SR04 para la detección de obstáculos. Estos sensores miden la distancia a objetos cercanos emitiendo un pulso de sonido ultrasonido y midiendo el tiempo que tarda en reflejarse. La distancia se calcula en función del tiempo que tarda el sonido en viajar hacia el objeto y regresar al sensor, permitiendo al vehículo detectar obstáculos y navegar de manera autónoma. Los sensores de ultrasonido son ampliamente utilizados en robótica debido a su precisión y bajo costo, y en este proyecto, son fundamentales para la capacidad de navegación del vehículo.
-
-
-### Módulo Controlador de Motor (L298N)
-
-El controlador de motor L298 permite controlar la velocidad y dirección de un motor de corriente continua (DC). Este módulo recibe las señales del Arduino y las traduce en comandos que el motor puede entender, permitiendo un control preciso de la propulsión del vehículo. El L298N es un controlador de motor dual H-Bridge que puede manejar dos motores DC, pero en este proyecto se utiliza solo uno. Su capacidad para manejar altos voltajes y corrientes lo hace ideal para proyectos de robótica y automóviles a pequeña escala.
+A lithium battery was used to power the components, providing the current they need to operate. This battery has a large charge capacity and considerable voltage, which helps reduce the need for frequent recharges and increases work efficiency.
 
 
-### Motor DC
+### Ultrasonic Sensor (HC-SR04)
 
-Un motor de corriente continua (DC) es un motor eléctrico que funciona con corriente directa. En este proyecto, el motor DC se utiliza para propulsar el vehículo. La velocidad y dirección del motor se controlan a través del módulo L298, permitiendo que el vehículo se mueva hacia adelante o hacia atrás según sea necesario. Los motores DC son conocidos por su simplicidad y eficiencia y son una opción popular para proyectos de robótica debido a su capacidad de control sencillo y su rendimiento fiable.
+The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the distance to nearby objects by emitting an ultrasonic pulse and measuring the time it takes to bounce back. The distance is calculated based on the time the sound travels to the object and back. These sensors are widely used in robotics due to their precision and low cost and are fundamental to this project’s navigation capabilities.
+
+
+### Motor Driver Module (L298N)
+
+The L298 motor driver controls the speed and direction of a DC motor. It receives signals from the Arduino and translates them into commands that the motor can understand, allowing for precise propulsion control. The L298N is a dual H-Bridge driver capable of handling two DC motors, but this project only uses one. Its ability to handle high voltages and currents makes it ideal for small-scale robotic and car projects.
+
+
+### DC Motor
+
+A direct current (DC) motor runs on DC power. In this project, it propels the vehicle. The motor’s speed and direction are controlled via the L298 module, allowing the car to move forward or backward as needed. DC motors are known for their simplicity and efficiency, making them a popular choice in robotics.
 
 
 ### Servo Motor
 
-Un servo motor se utiliza para controlar la dirección del vehículo. Los servos son motores de precisión que pueden girar a posiciones específicas, lo cual es útil para aplicaciones que requieren movimientos precisos. En este caso, el servo motor se utiliza para girar las ruedas delanteras del vehículo, permitiendo que cambie de dirección cuando se detectan obstáculos. Los servo motores son esenciales en robótica por su capacidad de control preciso, lo que permite una dirección exacta y una navegación eficiente.
+A servo motor is used to control the vehicle’s direction. Servos are precision motors that rotate to specific angles, ideal for tasks requiring accurate movements. In this project, the servo is used to steer the front wheels, allowing the vehicle to change direction when obstacles are detected. Servo motors are essential in robotics for their precise control.
 
 
-### Cables y Conectores
+### Cables and Connectors
 
-Se utilizan varios cables y conectores para interconectar todos los componentes del proyecto. Es importante utilizar cables de buena calidad y asegurar conexiones firmes para evitar problemas de comunicación y suministro de energía. Los cables y conectores adecuados garantizan que todos los componentes funcionen correctamente y se comuniquen de manera efectiva, lo cual es crucial para el rendimiento del vehículo.
-
-
-
-### Integrantes del Equipo
-
-El equipo responsable de este proyecto está compuesto por estudiantes de bachillerato del Colegio Simón Bolívar II, quienes han trabajado en colaboración para combinar sus habilidades en programación y electrónica:
-
-•	José Chacón: José se encargó de la unificación del software con el hardware, desarrollando partes del código y amoldando el chasis del carro para un diseño mucho más de acuerdo a nuestras necesidades, al igual de asegurarse de que las señales se transmitan correctamente y que el sistema responda adecuadamente a los datos de los sensores. José también se encargó de mejorar el diseño del vehículo para tener un robot acorde las normativas tanto de peso, de distancia, al igual para un buen funcionamiento de los componentes.
-
-•	Andrés Cazenave: Andrés se enfocó en la parte de hardware, asegurándose de que todos los componentes estuvieran correctamente conectados y funcionando adecuadamente. Su responsabilidad incluyó el montaje del circuito, la integración de los sensores, el motor y el controlador de motor, y la solución de problemas de hardware. Andrés también trabajó en la optimización del diseño del vehículo para asegurar una construcción sólida y eficiente, que pueda soportar el uso continuo y manejar diversas condiciones de operación.
-
-•	Juán Perez: Juán trabajó en la parte del software, desarrollando el código que permite al vehículo tomar decisiones basadas en la información de los sensores y controlar los motores. Su trabajo incluye la programación en C++ para interactuar con los pines del Arduino y coordinar las acciones del vehículo. Juán igualmente trabajó en el diseño del vehículo para asegurar un mejor uso de los componentes.
+Various cables and connectors are used to link all project components. Using quality cables and ensuring firm connections helps avoid communication or power issues. Proper cabling ensures all components work correctly and communicate effectively—critical for vehicle performance.
 
 
 
+### Team Members
 
-## Descripción de los Módulos y su Relación con los Componentes Electromecánicos
+The team responsible for this project consists of high school students from Colegio Simón Bolívar II who worked together to combine their programming and electronics skills:
 
+•	José Chacón: José was responsible for software and hardware integration, developing parts of the code, adapting the chassis design to suit our needs, ensuring proper signal transmission, and confirming that the system responded appropriately to sensor data. He also improved the vehicle’s design to meet weight and spacing regulations and ensure component functionality.
 
-### Módulos del Código
+•	Andrés Cazenave: Andrés focused on the hardware, ensuring all components were correctly connected and functional. His responsibilities included circuit assembly, sensor, motor and motor controller integration, and hardware troubleshooting. He also optimized the design to ensure a solid, efficient build.
 
-
-1.	Módulo de Sensores: Este módulo maneja la interacción con el sensor de ultrasonido y los sensores láser. Envía pulsos de disparo a los sensores y lee los pulsos de eco para calcular la distancia a los obstáculos. Los sensores láser envían rayos de luz y toman el tiempo que tarda en volver ese rayo para calcular la distancia de los objetos. Los datos de este módulo son cruciales para las decisiones de navegación del vehículo.
-   
-
-2.	Módulo de Control del Motor: Este módulo se encarga de la interfaz con el controlador de motor L298. Traduce comandos de alto nivel (como avanzar, retroceder, detenerse) en señales que controlan la velocidad y dirección del motor DC. Este módulo asegura un control preciso sobre la propulsión del vehículo.
-   
-
-3.	Módulo de Control del Servo: Este módulo controla el servo motor responsable de la dirección. Traduce los comandos direccionales en ángulos específicos para el servo, permitiendo que el vehículo gire sus ruedas delanteras de manera adecuada.
-
-  
-4.	Módulo de Control Principal: Este módulo integra los datos de los sensores y controla los módulos de motor y servo basándose en la lógica de navegación del vehículo. Es el cerebro central del vehículo, tomando decisiones sobre cómo moverse y girar basándose en las entradas de los sensores.
-
-
-
-   
-### Relación con los Componentes Electromecánicos
-
-
-
-•	Sensores de Ultrasonido (HC-SR04): Estos sensores están conectados a los pines del Arduino Mega. El módulo de sensores envía señales de disparo a través de salidas y lee los ecos de retorno a través de entradas para calcular las distancias.
-
-
-•	Motor DC y Controlador de Motor L298N: El módulo de control del motor envía señales desde los pines del Arduino Mega al controlador de motor L298N, que luego controla el voltaje y la corriente suministrados al motor DC, dictando su velocidad y dirección.
-
-
-•	Servo Motor: El módulo de control del servo envía señales PWM desde un pin del Arduino Mega al servo motor, ajustando su posición para dirigir el vehículo.
-Proceso para Construir/Compilar/Cargar el Código
+•	Juán Perez: Juán worked on software development, creating the code that allows the vehicle to make decisions based on sensor input and control the motors. He programmed in C++ to manage Arduino pin interactions and coordinated the vehicle’s actions. Juán also contributed to the vehicle design for better component usage.
 
 
 
 
-### Construcción del Vehículo
+## Description of the Modules and Their Relationship with the Electromechanical Components
+
+### Code Modules
+
+1.	Sensor Module: Manages interaction with the ultrasonic and laser sensors. Sends trigger pulses and reads echo pulses to calculate distances.
 
 
-1.	Ensamblar el Hardware:
-
-o	Conectar los sensores HC-SR04 a los pines adecuados en el Arduino Mega.
-o	Conectar el controlador de motor L298N al motor DC y a los pines del Arduino.
-o	Conectar el servo motor a un pin del Arduino para el control PWM.
-o	Asegurarse de que todos los componentes estén conectados de manera segura y alimentados.
+2.	Motor Control Module: Interfaces with the L298 driver to translate high-level commands (forward, reverse, stop) into speed/direction control.
 
 
-
-2.	Preparar el Arduino Mega:
-
-o	Asegurarse de tener el software Arduino IDE instalado en tu computadora.
-o	Conectar el Arduino Mega a la computadora mediante un cable USB.
-o	Cargar el código de control en el Arduino Mega desde el Arduino IDE.
+3.	Servo Control Module: Translates directional commands into servo angles for steering.
 
 
-
-3.	Clonar el Repositorio:
-
-o	Clonar el repositorio del proyecto SONICAR desde GitHub.
-
-
-
-4.	Ejecutar el Código:
-
-o	Asegurarse de que todos los scripts y módulos estén en su lugar.
-o	Ejecutar el código cargándolo en el Arduino Mega utilizando el Arduino IDE.
+4.	Main Control Module: Integrates sensor data and controls motor/servo logic. It is the central brain that makes navigation decisions.
 
 
 
 
-### Compilación y Carga
+### Relationship with Electromechanical Components
 
-•	Los scripts en Arduino no requieren compilación adicional fuera del entorno de desarrollo Arduino IDE.
-•	Cargar directamente el código de control en el Arduino Mega desde el Arduino IDE.
+• 	Ultrasonic Sensors (HC-SR04): Connected to Arduino Mega pins. Sends and reads signals to calculate distances.
+
+
+• 	DC Motor and L298N Controller: The motor control module sends signals from Arduino to L298N, which controls voltage/current to the motor.
+
+
+• 	Servo Motor: Receives PWM signals from Arduino to adjust steering position.
+
+
+
+
+### Building/Compiling/Uploading Code
+
+1. 	Assemble Hardware:
+
+
+o	Connect HC-SR04 sensors to Arduino pins
+o	Connect L298N to DC motor and Arduino
+o	Connect servo to Arduino for PWM control
+o	Ensure all components are securely connected and powered
+
+
+
+2. 	Prepare Arduino Mega:
+
+
+o	Install Arduino IDE
+o	Connect Arduino Mega via USB
+o	Upload control code from the IDE
+
+
+
+3. 	Clone Repository:
+
+o	Clone the SONICAR GitHub repository
+
+
+
+4. 	Run Code:
+
+o	Ensure all scripts/modules are ready
+o	Load code into Arduino Mega using the IDE
+
+
+
+
+### Compilation and Upload
+
+• 	Arduino scripts do not need external compilation outside the Arduino IDE
+•	Directly upload the code to the Arduino Mega
 
 
 
