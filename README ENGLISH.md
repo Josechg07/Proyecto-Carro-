@@ -20,7 +20,7 @@ Hey, I'm Juan Pérez from Venezuela! This is my first time joining the WRO on th
 # Photo Team
 
 
-| ![Photo Team](https://github.com/Josechg07/Proyecto-Carro-/blob/79d9914715bfaa9ab9f91b5d2c46b010a129eff2/t-photos/Foto%20equipo.jpg) |
+![Photo Team](https://github.com/Josechg07/Proyecto-Carro-/blob/79d9914715bfaa9ab9f91b5d2c46b010a129eff2/t-photos/Foto%20equipo.jpg)
 
 
 # Challenge
