@@ -174,7 +174,7 @@ A lithium battery was used to power the components, providing the current they n
 <table border="1" cellspacing="0" cellpadding="10">
   <tr>
     <td width="50%" align="center">
-      <img src="https://dfimg.dfrobot.com/store/data/SEN0305/20200225%20Update/SEN0305-family_564x376.JPG" width="250">
+      <img src="https://tienda.bricogeek.com/6961-large_default/huskylens-camara-de-vision-artificial.jpg" width="250">
     </td>
     <td width="50%" valign="top">
       <b>Specifications:</b>
