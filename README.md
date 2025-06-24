@@ -118,7 +118,7 @@ The L298N motor driver controls the speed and direction of a DC motor. It receiv
 <table border="1" cellspacing="0" cellpadding="10">
   <tr>
     <td width="50%" align="center">
-      <img src="(https://grobotronics.com/images/thumbnails/570/570/detailed/133/67820072_grey_1_grobo.jpg)" width="250">
+      <img src="https://grobotronics.com/images/thumbnails/570/570/detailed/133/67820072_grey_1_grobo.jpg" width="250">
     </td>
     <td width="50%" valign="top">
       <b>Specifications:</b>
