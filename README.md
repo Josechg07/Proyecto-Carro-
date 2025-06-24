@@ -115,6 +115,23 @@ The L298N motor driver controls the speed and direction of a DC motor. It receiv
 
 ### Servo Motor
 
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://grobotronics.com/images/thumbnails/570/570/detailed/133/67820072_grey_1_grobo.jpg" width="250">
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Rotation angle:</b> 180° </li>
+        <li><b>Operating speed:</b> 0.12 ± 20% sec/60° at 4.8V </li>
+        <li><b>Stall torque:</b> 1.8 kg·cm (6V) </li>
+        <li><b>Weight:</b> 9g </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 
 A servo motor is used to control the vehicle’s direction. Servos are precision motors that rotate to specific angles, ideal for tasks requiring accurate movements. In this project, the servo is used to steer the front wheels, allowing the vehicle to change direction when obstacles are detected. Servo motors are essential in robotics for their precise control.
 
