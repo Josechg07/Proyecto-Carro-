@@ -62,9 +62,26 @@ The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams t
 
 
 
-### Motor DC
+### Motor DC Lego
 
-(Table of Information for motor)
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://grobotronics.com/images/thumbnails/570/570/detailed/133/67820074_960x960_3_grobo.jpg" width="250">
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Voltage:</b> 4.8V</li>
+        <li><b>Gear Ratio:</b> 1:48</li>
+        <li><b>Speed:</b> 650 ± 31% rpm</li>
+        <li><b>Torque:</b> 1.2 ± kg·cm</li>
+        <li><b>Weight:</b> 30g</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 
 A direct current (DC) motor runs on DC power. In this project, it propels the vehicle. The motor’s speed and direction are controlled via the L298 module, allowing the car to move forward or backward as needed. DC motors are known for their simplicity and efficiency, making them a popular choice in robotics.
 
@@ -211,7 +228,7 @@ SONICAR is a robotics project developed by high school students from Colegio Sim
 ### 3. Mechanical Components:
 
 3.1 Wheels x 4
-3.2 11V direct current (DC) motor
+3.2 4.8V direct current (DC) motor lego
 3.3 Servo motor (SG90)
 
 
