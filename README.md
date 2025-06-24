@@ -88,7 +88,26 @@ A direct current (DC) motor runs on DC power. In this project, it propels the ve
 
 ### Motor Driver
 
-The L298 motor driver controls the speed and direction of a DC motor. It receives signals from the Arduino and translates them into commands that the motor can understand, allowing for precise propulsion control. The L298N is a dual H-Bridge driver capable of handling two DC motors, but this project only uses one. Its ability to handle high voltages and currents makes it ideal for small-scale robotic and car projects.
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://www.sparkfun.com/media/catalog/product/cache/a793f13fd3d678cea13d28206895ba0c/1/4/14450a-01.jpg" width="250">
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Power supply voltage:</b> VM = 15V max, VCC = 2.7-5.5V</li>
+        <li><b>Output current:</b> lout = 1.2A (average) / 3.2 A (peak) </li>
+        <li><b>Standby control to save power</b></li>
+        <li><b>CW/CCW/short-brake/stop motor control modes</b></li>
+        <li><b>built-in thermal shutdown cirtuit and low-voltage</b></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+The L298N motor driver controls the speed and direction of a DC motor. It receives signals from the Arduino and translates them into commands that the motor can understand, allowing for precise propulsion control. The L298N is a dual H-Bridge driver capable of handling two DC motors, but this project only uses one. Its ability to handle high voltages and currents makes it ideal for small-scale robotic and car projects.
 
 
 ### Steering
