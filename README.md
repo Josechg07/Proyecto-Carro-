@@ -100,7 +100,7 @@ A direct current (DC) motor runs on DC power. In this project, it propels the ve
         <li><b>Output current:</b> lout = 1.2A (average) / 3.2 A (peak) </li>
         <li><b>Standby control to save power</b></li>
         <li><b>CW/CCW/short-brake/stop motor control modes</b></li>
-        <li><b>built-in thermal shutdown cirtuit and low-voltage</b></li>
+        <li><b>Built-in thermal shutdown cirtuit and low-voltage</b></li>
       </ul>
     </td>
   </tr>
@@ -123,10 +123,10 @@ The L298N motor driver controls the speed and direction of a DC motor. It receiv
     <td width="50%" valign="top">
       <b>Specifications:</b>
       <ul>
-        <li><b>Rotation angle:</b> 180° </li>
+        <li><b>Rotation angle:</b> 270° </li>
         <li><b>Operating speed:</b> 0.12 ± 20% sec/60° at 4.8V </li>
         <li><b>Stall torque:</b> 1.8 kg·cm (6V) </li>
-        <li><b>Weight:</b> 9g </li>
+        <li><b>Weight:</b> 12.5g </li>
       </ul>
     </td>
   </tr>
@@ -148,8 +148,26 @@ A servo motor is used to control the vehicle’s direction. Servos are precision
 A lithium battery was used to power the components, providing the current they need to operate. This battery has a large charge capacity and considerable voltage, which helps reduce the need for frequent recharges and increases work efficiency.
 
 
-### Arduino Uno R4 WIFI
+### Arduino Mega
 
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://grobotronics.com/images/thumbnails/570/570/detailed/133/67820072_grey_1_grobo.jpg" width="250">
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Microcontroller:</b> Arduino Mega </li>
+        <li><b>Pins:</b> 70 </li>
+        <li><b>SRAM:</b> 8KB </li>
+        <li><b>Frequency:</b> 16 MHz </li>
+        <li><b>Flash memory:</b> 256 KB </li>
+        <li><b>Input voltage:</b> 6-20V </li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ### Camera HuskyLens
 
@@ -271,7 +289,7 @@ SONICAR is a robotics project developed by high school students from Colegio Sim
 
 ### Arduino Mega
 
-The Arduino Uno R4 WIFI is a low-cost development board that allows users to create programming and electronics projects. It features an 8-bit microcontroller, limited memory but sufficient for many projects, and multiple ports to connect other components. In this project, the Arduino Mega acts as the brain of the vehicle, making decisions based on sensor input and controlling the motors. Its simplicity and versatility make the Arduino Mega an ideal platform for educational and prototyping projects.
+The Arduino Mega is a low-cost development board that allows users to create programming and electronics projects. It features an 8-bit microcontroller, limited memory but sufficient for many projects, and multiple ports to connect other components. In this project, the Arduino Mega acts as the brain of the vehicle, making decisions based on sensor input and controlling the motors. Its simplicity and versatility make the Arduino Mega an ideal platform for educational and prototyping projects.
 
 
 ### Laser Sensors (VL53L0X-V2)
