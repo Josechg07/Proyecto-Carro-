@@ -208,7 +208,7 @@ Two VL53L0X-V2 laser sensors are used for distance measurement. These sensors de
       <ul>
         <li><b>Operating Voltage:</b> 5.5V DC </li>
         <li><b>Distance Range:</b> 2cm to 4m </li>
-        <li><b>Field of View (FoV):</b> 15° </25°>
+        <li><b>Field of View (FoV):</b> 15° </li>
         <li><b>Max Measurement Rate:</b> 20 MHz </li>
         <li><b>Power Consumption:</b> 15 mA </li>
         <li><b>Dimensions:</b> 45mm x 20mm x 15 mm </li>
@@ -221,7 +221,24 @@ The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the di
 
 ### Protoboard
 
-
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://robot.com.ve/wp-content/uploads/2021/08/AR0005_Protoboard-830-puntos_v3.jpg" width="250">
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Tie-Points:</b> 830 (full-size) </li>
+        <li><b>Dimensions:</b> 165mm x 55mm x 10mm </li>
+        <li><b>Pitch (Hole SPacing):</b> 2.54mm (0.1 inch) </li>
+        <li><b>Voltage Rating:</b> Up to 12V DC (recommended) </li>
+        <li><b>Current Rating:</b> Up to 1 A (ideal < 500 mA per line) </li>
+        <li><b>Wire COmpatibility:</b> 22-28 AWG solid-core jumper wires </li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 
 # Code for each one of the component
