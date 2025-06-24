@@ -171,6 +171,24 @@ A lithium battery was used to power the components, providing the current they n
 
 ### Camera HuskyLens
 
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://dfimg.dfrobot.com/store/data/SEN0305/20200225%20Update/SEN0305-family_564x376.JPG" width="250">
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Microcontroller:</b> Kendryte K210 </li>
+        <li><b>SRAM:</b> 8 MB </li>
+        <li><b>Resolution:</b> 320 x 240 Pixels </li>
+        <li><b>Flash memory:</b> 16 MB NOR Flash </li>
+        <li><b>Frame rate:</b> Up to 60 FPS </li>
+        <li><b>Frequency:</b> 400 MHz (up to 800MHz) </li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ### Laser Sensors (VL53L0X-V2)
 
