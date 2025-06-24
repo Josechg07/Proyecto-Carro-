@@ -62,35 +62,56 @@ The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams t
 
 
 
-## Motor
+### Motor DC
+
+(Table of Information for motor)
+
+A direct current (DC) motor runs on DC power. In this project, it propels the vehicle. The motor’s speed and direction are controlled via the L298 module, allowing the car to move forward or backward as needed. DC motors are known for their simplicity and efficiency, making them a popular choice in robotics.
 
 
-## Motor Driver
+### Motor Driver
+
+The L298 motor driver controls the speed and direction of a DC motor. It receives signals from the Arduino and translates them into commands that the motor can understand, allowing for precise propulsion control. The L298N is a dual H-Bridge driver capable of handling two DC motors, but this project only uses one. Its ability to handle high voltages and currents makes it ideal for small-scale robotic and car projects.
 
 
-## Steering
+### Steering
 
 
-## Servo Motor
+### Servo Motor
 
 
-## Chasis
+A servo motor is used to control the vehicle’s direction. Servos are precision motors that rotate to specific angles, ideal for tasks requiring accurate movements. In this project, the servo is used to steer the front wheels, allowing the vehicle to change direction when obstacles are detected. Servo motors are essential in robotics for their precise control.
+
+
+### Chasis
 
 
 
 # Movility Management
 
 
-## Li-Po Battery
+### Li-Po Battery 2200 mAH
+
+A lithium battery was used to power the components, providing the current they need to operate. This battery has a large charge capacity and considerable voltage, which helps reduce the need for frequent recharges and increases work efficiency.
 
 
-## Arduino Uno R4 WIFI
+### Arduino Uno R4 WIFI
 
 
-## Camera HuskyLens
+### Camera HuskyLens
 
 
-## Protoboard
+### Laser Sensors (VL53L0X-V2)
+
+Two VL53L0X-V2 laser sensors are used for distance measurement. These sensors detect object distances within a range by emitting a light beam and measuring the time it takes to return. This allows for object detection and autonomous movement. These sensors are commonly used in projects like this due to their precision and fewer problems compared to other types. In this work, they are crucial to achieving vehicle autonomy.
+
+
+### Ultrasonic Sensor (HC-SR04)
+
+The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the distance to nearby objects by emitting an ultrasonic pulse and measuring the time it takes to bounce back. The distance is calculated based on the time the sound travels to the object and back. These sensors are widely used in robotics due to their precision and low cost and are fundamental to this project’s navigation capabilities.
+
+
+### Protoboard
 
 
 
@@ -98,34 +119,31 @@ The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams t
 # Code for each one of the component
 
 
-## DC Motor
+### DC Motor
 
 
-## Servo Motor
-
-
-## Camera HuskyLens
+### Servo Motor
 
 
 
 # Obstacle Management
 
-## Open Round
+### Open Round
 
 
-## Final Round
+### Final Round
 
 
-## Cube Detection
+### Cube Detection
 
 
-## Parking Wall Detection
+### Parking Wall Detection
 
 
-## Robot Construction Guide
+### Robot Construction Guide
 
 
-## Cost List
+### Cost List
 
 
 
@@ -200,37 +218,31 @@ SONICAR is a robotics project developed by high school students from Colegio Sim
 
 ### Arduino Mega
 
-The Arduino Mega is a low-cost development board that allows users to create programming and electronics projects. It features an 8-bit microcontroller, limited memory but sufficient for many projects, and multiple ports to connect other components. In this project, the Arduino Mega acts as the brain of the vehicle, making decisions based on sensor input and controlling the motors. Its simplicity and versatility make the Arduino Mega an ideal platform for educational and prototyping projects.
+The Arduino Uno R4 WIFI is a low-cost development board that allows users to create programming and electronics projects. It features an 8-bit microcontroller, limited memory but sufficient for many projects, and multiple ports to connect other components. In this project, the Arduino Mega acts as the brain of the vehicle, making decisions based on sensor input and controlling the motors. Its simplicity and versatility make the Arduino Mega an ideal platform for educational and prototyping projects.
 
 
 ### Laser Sensors (VL53L0X-V2)
 
-Two VL53L0X-V2 laser sensors are used for distance measurement. These sensors detect object distances within a range by emitting a light beam and measuring the time it takes to return. This allows for object detection and autonomous movement. These sensors are commonly used in projects like this due to their precision and fewer problems compared to other types. In this work, they are crucial to achieving vehicle autonomy.
 
 
 ### 5600mAh Lithium Battery
 
-A lithium battery was used to power the components, providing the current they need to operate. This battery has a large charge capacity and considerable voltage, which helps reduce the need for frequent recharges and increases work efficiency.
 
 
 ### Ultrasonic Sensor (HC-SR04)
 
-The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the distance to nearby objects by emitting an ultrasonic pulse and measuring the time it takes to bounce back. The distance is calculated based on the time the sound travels to the object and back. These sensors are widely used in robotics due to their precision and low cost and are fundamental to this project’s navigation capabilities.
 
 
 ### Motor Driver Module (L298N)
 
-The L298 motor driver controls the speed and direction of a DC motor. It receives signals from the Arduino and translates them into commands that the motor can understand, allowing for precise propulsion control. The L298N is a dual H-Bridge driver capable of handling two DC motors, but this project only uses one. Its ability to handle high voltages and currents makes it ideal for small-scale robotic and car projects.
 
 
 ### DC Motor
 
-A direct current (DC) motor runs on DC power. In this project, it propels the vehicle. The motor’s speed and direction are controlled via the L298 module, allowing the car to move forward or backward as needed. DC motors are known for their simplicity and efficiency, making them a popular choice in robotics.
 
 
 ### Servo Motor
 
-A servo motor is used to control the vehicle’s direction. Servos are precision motors that rotate to specific angles, ideal for tasks requiring accurate movements. In this project, the servo is used to steer the front wheels, allowing the vehicle to change direction when obstacles are detected. Servo motors are essential in robotics for their precise control.
 
 
 ### Cables and Connectors
