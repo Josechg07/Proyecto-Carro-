@@ -174,6 +174,25 @@ A lithium battery was used to power the components, providing the current they n
 
 ### Laser Sensors (VL53L0X-V2)
 
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://dinastiatecnologica.com/wp-content/uploads/2023/10/Captura-de-pantalla-2023-10-14-115914-600x438.png" width="250">
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Operating Voltage:</b> 2.6V - 5.5V </li>
+        <li><b>Distance Range:</b> 3cm to 2m </li>
+        <li><b>Field of View (FoV):</b> 8KB </25°>
+        <li><b>Max Measurement Rate:</b> Up to 50 MHz </li>
+        <li><b>Power Consumption:</b> 20 mW in normal mode </li>
+        <li><b>Dimensions:</b> Approx. 21 x 13 x 5 mm </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 Two VL53L0X-V2 laser sensors are used for distance measurement. These sensors detect object distances within a range by emitting a light beam and measuring the time it takes to return. This allows for object detection and autonomous movement. These sensors are commonly used in projects like this due to their precision and fewer problems compared to other types. In this work, they are crucial to achieving vehicle autonomy.
 
 
