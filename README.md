@@ -184,10 +184,10 @@ A lithium battery was used to power the components, providing the current they n
       <ul>
         <li><b>Operating Voltage:</b> 2.6V - 5.5V </li>
         <li><b>Distance Range:</b> 3cm to 2m </li>
-        <li><b>Field of View (FoV):</b> 8KB </25°>
+        <li><b>Field of View (FoV):</b> 25° </li>
         <li><b>Max Measurement Rate:</b> Up to 50 MHz </li>
-        <li><b>Power Consumption:</b> 20 mW in normal mode </li>
-        <li><b>Dimensions:</b> Approx. 21 x 13 x 5 mm </li>
+        <li><b>Power Consumption:</b> 20 mW </li>
+        <li><b>Dimensions:</b> 21mm x 13mm x 5 mm </li>
       </ul>
     </td>
   </tr>
@@ -198,6 +198,24 @@ Two VL53L0X-V2 laser sensors are used for distance measurement. These sensors de
 
 ### Ultrasonic Sensor (HC-SR04)
 
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://www.sparkfun.com/media/catalog/product/cache/a793f13fd3d678cea13d28206895ba0c/1/5/15569-Ultrasonic_Distance_Sensor_-_HC-SR04-01a.jpg" width="250">
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Operating Voltage:</b> 5.5V DC </li>
+        <li><b>Distance Range:</b> 2cm to 4m </li>
+        <li><b>Field of View (FoV):</b> 15° </25°>
+        <li><b>Max Measurement Rate:</b> 20 MHz </li>
+        <li><b>Power Consumption:</b> 15 mA </li>
+        <li><b>Dimensions:</b> 45mm x 20mm x 15 mm </li>
+      </ul>
+    </td>
+  </tr>
+</table>
 The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the distance to nearby objects by emitting an ultrasonic pulse and measuring the time it takes to bounce back. The distance is calculated based on the time the sound travels to the object and back. These sensors are widely used in robotics due to their precision and low cost and are fundamental to this project’s navigation capabilities.
 
 
