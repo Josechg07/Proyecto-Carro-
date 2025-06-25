@@ -262,7 +262,7 @@ The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the di
 # Code for each one of the component
 
 
-### DC Motor
+## DC Motor
 
 Given the fact that the Arduino has an ESP chip, the PWM signals have to be sent using the ( ```ledc``` ) utility.
 
@@ -287,7 +287,7 @@ void permatrago() { // Void para que el carro se detenga
 }
 ```
 
-### Servo Motor
+## Servo Motor
 
 
 
