@@ -285,7 +285,7 @@ void permatrago() { // Void para que el carro se detenga
   digitalWrite(in1, LOW); // El carro no avanza ni retrocede
   digitalWrite(in2, LOW);
 }
-
+```
 
 ### Servo Motor
 
@@ -320,7 +320,7 @@ void gi() { // Void para que el carro gire a la izquierda
   digitalWrite(LED_BUILTIN, LOW); // Indicar que acabo el giro
   rosamelano = millis(); // Guardar el tiempo en el que termina el giro
 } 
-
+```
 
 # Obstacle Management
 
