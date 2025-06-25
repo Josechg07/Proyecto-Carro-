@@ -264,9 +264,62 @@ The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the di
 
 ### DC Motor
 
+Given the fact that the Arduino has an ESP chip, the PWM signals have to be sent using the ( ```ledc``` ) utility.
+
+```ino
+void crotolamo() { // Void para que avance el carro
+  giro.write(recto); // Poner ruedas rectas
+  analogWrite(en, vel); // Poner la velocidad normal
+  digitalWrite(in1, HIGH); // El carro avanza
+  digitalWrite(in2, LOW);
+}
+void retroceder() { // Void para que el carro retroceda
+  giro.write(recto); // Poner ruedas rectas
+  analogWrite(en, vel); // Poner velocidad normal
+  digitalWrite(in1, LOW); // El carro retrocede
+  digitalWrite(in2, HIGH);
+}
+void permatrago() { // Void para que el carro se detenga
+  giro.write(recto); // Poner ruedas rectas
+  analogWrite(en, 0); // Poner la velocidad en 0
+  digitalWrite(in1, LOW); // El carro no avanza ni retrocede
+  digitalWrite(in2, LOW);
+}
+
 
 ### Servo Motor
 
+
+
+```ino
+void gd() { // Void para que el carro gire a la derecha
+  digitalWrite(LED_BUILTIN, HIGH); // Prender el led del Arduino para mostrar el giro
+  analogWrite(en, vel); // Aumentar la velocidad del carro
+  digitalWrite(in1, HIGH); // Asegurarse que el carro avanza
+  digitalWrite(in2, LOW);
+  giro.write(120); // Rotar las ruedas para que gire a la derecha
+  while (derecha > 60) { // Parar el giro cuando se cumplan ciertas distancias
+    sd(); // Continuar leyendo los valores
+    delay(20);
+  }
+  crotolamo(); // Reiniciar el carro
+  digitalWrite(LED_BUILTIN, LOW); // Indicar que acabo el giro
+  rosamelano = millis(); // Guardar el tiempo en el que termina el giro
+}
+void gi() { // Void para que el carro gire a la izquierda
+  digitalWrite(LED_BUILTIN, HIGH); // Prender el led del Arduino para mostrar el giro
+  analogWrite(en, vel); // Aumentar la velocidad del carro
+  digitalWrite(in1, HIGH); // Asegurarse que el carro avanza
+  digitalWrite(in2, LOW);
+  giro.write(65); // Rotar las ruedas para que gire a la izquierda
+  while(izquierda > 60){ // Parar el giro cuando se cumplan ciertas distancias
+    si(); // Continuar leyendo los valores
+    delay(20); 
+  }
+  crotolamo(); // Reiniciar el carro
+  digitalWrite(LED_BUILTIN, LOW); // Indicar que acabo el giro
+  rosamelano = millis(); // Guardar el tiempo en el que termina el giro
+} 
 
 
 # Obstacle Management
