@@ -12,8 +12,12 @@ This repository contains information about the sonicar team's robot for the 2025
 ### Andrés José Casenave
 
 
+Hello! I’m Andrés from Venezuela, and this is my second time participating in the WRO Future Engineers category. Last year, my team and I got first place in the regional leaderboard. We qualified for the National Contest, where we had the opportunity to meet new people and see their way of confronting the challenge. I like robotics, cars, motorcycles, and basically anything with an engine on it.
+
 
 ### Juán Andrés Perez
+
+
 Hey, I'm Juan Pérez from Venezuela! This is my first time joining the WRO on the Future Engineers category and I am having a blast! I had never tried it before, but after starting, creating this robot has been an amazing experience. I love challenging myself! From crosswords to chess, you name it, and this whole experience feels like an even bigger challenge I'm ready to beat!
 
 
@@ -40,7 +44,7 @@ The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams t
 |:--:|:--:|
 | Left | Right |
 
-| ![Top](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Top.jpg) | ![Botton](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Botton.jpg) |
+| ![Top](https://github.com/Josechg07/Proyecto-Carro-/blob/166d8a673ec1860a324e92338a4c4fa5a8784ea5/v-photos/Top.jpg) | ![Botton](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Botton.jpg) |
 |:--:|:--:|
 | Top | Botton |
 
