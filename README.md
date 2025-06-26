@@ -12,8 +12,12 @@ This repository contains information about the sonicar team's robot for the 2025
 ### Andrés José Casenave
 
 
+Hello! I’m Andrés from Venezuela, and this is my second time participating in the WRO Future Engineers category. Last year, my team and I got first place in the regional leaderboard. We qualified for the National Contest, where we had the opportunity to meet new people and see their way of confronting the challenge. I like robotics, cars, motorcycles, and basically anything with an engine on it.
+
 
 ### Juán Andrés Perez
+
+
 Hey, I'm Juan Pérez from Venezuela! This is my first time joining the WRO on the Future Engineers category and I am having a blast! I had never tried it before, but after starting, creating this robot has been an amazing experience. I love challenging myself! From crosswords to chess, you name it, and this whole experience feels like an even bigger challenge I'm ready to beat!
 
 
