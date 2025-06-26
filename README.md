@@ -32,15 +32,15 @@ The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams t
 # Photos of the robot eustakio
 
 
-| ![Front](https://github.com/Josechg07/Proyecto-Carro-/blob/12b60deac7c74e78cd3b6142d8d33f51107b93d8/v-photos/Lado%20Frontal.jpg) | ![Back](https://github.com/Josechg07/Proyecto-Carro-/blob/12b60deac7c74e78cd3b6142d8d33f51107b93d8/v-photos/Lado%20trasero.jpg) |
+| ![Front](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Front.jpg) | ![Back](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Back.jpg) |
 |:--:|:--:|
 | Front | Back |
 
-| ![Left](https://github.com/Josechg07/Proyecto-Carro-/blob/12b60deac7c74e78cd3b6142d8d33f51107b93d8/v-photos/Lado%20izquierdo.jpg) | ![Right](https://github.com/Josechg07/Proyecto-Carro-/blob/12b60deac7c74e78cd3b6142d8d33f51107b93d8/v-photos/Lado%20derecho.jpg) |
+| ![Left](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Left.jpg) | ![Right](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Right.jpg) |
 |:--:|:--:|
 | Left | Right |
 
-| ![Top](https://github.com/Josechg07/Proyecto-Carro-/blob/5a31ce0698bf67a05613ec5fa373fd08630c7c21/v-photos/Lado%20Superior.jpg) | ![Botton](https://github.com/Josechg07/Proyecto-Carro-/blob/2da9dcb64fe6ef0a51f599abdc4eae7ae211af33/v-photos/Lado%20Inferior.jpg) |
+| ![Top](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Top.jpg) | ![Botton](https://github.com/Josechg07/Proyecto-Carro-/blob/41f3d437534a720e299889bcc8a9a7bcce44639d/v-photos/Botton.jpg) |
 |:--:|:--:|
 | Top | Botton |
 
