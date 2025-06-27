@@ -8,6 +8,7 @@ This repository contains information about the sonicar team's robot for the 2025
 ### José Ricardo Chacón
 
 
+Hey there!! I'm José Ricardo from Venezuela. This is my second time participating in the WRO on the Future Engineers category and this have been too much amazing!! On the first time, last year, my team and I got the opportunity to go to the competition on Italy because we got the first place in the regional leaderboard. This is an entire new experience, even that is the second time!! Creating this tipe of robot, obtaining new knowledge, meeting new people, is an incredible experience that I love. Is incredible what we can obtain with this tipe of challenges, and I'm ready to beat this!! Also, I like F1, cars, robots, program, and the tennis.
 
 ### Andrés José Casenave
 
