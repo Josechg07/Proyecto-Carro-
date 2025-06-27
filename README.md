@@ -63,7 +63,22 @@ The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams t
 # Mechanic Management
 
 
+Desde la batería se derivan dos conductores: uno correspondiente al polo negativo (GND) y otro al polo positivo (V+). El conductor positivo está interrumpido por un interruptor mecánico, que actúa como un control de encendido, permitiendo o bloqueando el flujo de corriente hacia el resto del sistema.
 
+Posterior al interruptor, el conductor se conecta al terminal VM (Voltage Motor) del puente H, responsable de alimentar los motores. Desde esta misma línea de alimentación, se deriva una conexión hacia el pin VIN del Arduino, que permite suministrar energía a la placa. El conductor negativo de la batería se conecta directamente al pin GND del Arduino, cerrando así el circuito de alimentación de la placa.
+
+Adicionalmente, en el puente H se conecta un pin de alimentación (VCC) hacia la línea positiva de la protoboard para alimentar los componentes de lógica interna del puente.
+
+El puente H dispone de tres pines de control: PWM A, IN1 e IN2.
+
+PWM A está conectado al pin digital 10 del Arduino y permite la modulación por ancho de pulso (PWM) para el control de velocidad.
+
+IN1 e IN2, conectados a los pines 12 y 13 respectivamente, determinan la dirección de rotación del motor conectado al canal A.
+
+
+Las salidas del puente H (OUT1 y OUT2) están conectadas directamente al motor de corriente continua. Estas salidas permiten controlar el sentido y velocidad del motor en función de las señales de entrada enviadas desde el microcontrolador.
+
+Finalmente, el motor está acoplado a las ruedas mediante un eje común que atraviesa un sistema de diferencial mecánico, el cual optimiza la maniobrabilidad del vehículo en curvas, distribuyendo el par de manera eficiente entre las ruedas y reduciendo el desgaste prematuro de las mismas.
 
 
 ### Motor DC Lego
