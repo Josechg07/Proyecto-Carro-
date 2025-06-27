@@ -160,7 +160,12 @@ A servo motor is used to control the vehicle’s direction. Servos are precision
 
 
 
-# Movility Management
+# Mobility Management
+
+
+El arduino mega es el cerebro del robot, se encuentra conectado con dos sensores de ultrasonido hc-sr04, uno a la derecha y otro a la izquierda, para poder medir los bordes, si la distancia que hay de uno de los dos lados es mayor a 1m, entonces ya el robot sabe si girar a la derecha o a la izquierda. Una vez determinada la dirección, se procede a mandar la información al servomotor para determinar si gira a la derecha o a la izquierda, aquí se le envía un ángulo determinado. A su vez, se le está enviando constantemente la información al motor DC para que el carro pueda avanzar constantemente. 
+
+El robot cuenta con un giroscopio, el cual es capaz de determinar la velocidad angular y determinar una vez cuando el carro haya girado 90°, cuando lo hace, sigue en línea recta hasta llegar a la siguiente curva. Este ciclo se repite hasta que el carro cuente un total de 12 giros (4 giros por vuelta) y se detiene.
 
 
 ### Li-Po Battery 2200 mAH
