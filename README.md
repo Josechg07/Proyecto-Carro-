@@ -179,6 +179,16 @@ A servo motor is used to control the vehicle’s direction. Servos are precision
 ### Chasis
 
 
+Here are the top view of the internal and external measurements, and .stl file of the chassis 3D. The design of the robot was personalized for our necessities of the competition.
+
+
+![Photo top view of the external measurements of the chassis 3D](https://github.com/Josechg07/Proyecto-Carro-/blob/b10d7031ee4dc45292df1ba2dba1cf9054451a36/others/Images-for-readmi/Top%20view%20of%20external%20measurements.jpg)
+
+
+![Photo top view of the internal measurements of the chassis 3D](https://github.com/Josechg07/Proyecto-Carro-/blob/b10d7031ee4dc45292df1ba2dba1cf9054451a36/others/Images-for-readmi/Top%20view%20of%20internal%20measurements.jpg)
+
+
+![Photo top view of the .stl file of the chassis 3D](https://github.com/Josechg07/Proyecto-Carro-/blob/b10d7031ee4dc45292df1ba2dba1cf9054451a36/others/Images-for-readmi/Top%20view%20chassis%20(.stl).jpg)
 
 # Mobility Management
 
