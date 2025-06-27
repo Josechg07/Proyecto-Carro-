@@ -358,6 +358,9 @@ void gi() { // Void para que el carro gire a la izquierda
 ### Cube Detection
 
 
+Para la estrategia de esquivar obstáculos, contamos con una cámara husky lens, la cual nos permite identificar el color de los obstáculos, ya sea rojo o verde. Para determinar si el objetivo se encuentra cerca o lejos, usamos la información que nos proporciona la cámara, como lo es el ancho y alto, en píxeles, del objeto, si el área es pequeña, sabemos que el obstáculo está lejos, lo que permite que el carro pueda esquivarlo desde lejos. Pero si el obstáculo se encuentra cerca, el carro retrocede (para evitar chocar) y luego lo esquiva por su lado correspondiente. Esta lógica se mezcla con la de la primera ronda para poder lograr las 3 vueltas sin problema alguno.
+
+
 ### Parking Wall Detection
 
 
