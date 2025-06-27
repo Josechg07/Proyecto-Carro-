@@ -29,7 +29,21 @@ Hey, I'm Juan Pérez from Venezuela! This is my first time joining the WRO on th
 
 
 # Challenge
-The WRO 2025 Future Engineers - Self-Driving Cars challenge makes to the teams to create, 
+The WRO 2024 Future Engineers – Autonomous Vehicle Challenge invites participants to conceptualize, construct, and program a robotic car capable of navigating a race track without human intervention. The layout of the track changes each round, requiring the robot to adapt in real-time. The challenge is divided into two core components: completing multiple laps while avoiding randomly placed obstacles, and executing an accurate parallel parking maneuver.
+
+Participants are encouraged to apply advanced engineering principles including computer vision, sensor integration, and motion control, with a strong emphasis on innovation, precision, and system reliability.
+
+This competition highlights essential stages of the engineering cycle, such as:
+
+- Vehicle Dynamics: Designing effective and reliable mobility systems.
+
+- Obstacle Navigation: Implementing strategies to identify and respond to traffic markers (red and green indicators) in compliance with event rules.
+
+- Project Documentation: Demonstrating the development process, design rationale, and teamwork through transparent and collaborative repositories, such as GitHub.
+
+Teams are evaluated not only on their robot's performance during the rounds but also on the clarity and depth of their engineering documentation and the ingenuity of their solution. The challenge aims to spark interest in STEM fields by offering hands-on experience in robotics, problem-solving, and collaborative innovation.
+
+Discover more about the challenge by visiting the official site.
 
 
 
