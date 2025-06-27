@@ -8,16 +8,22 @@ This repository contains information about the sonicar team's robot for the 2025
 ### José Ricardo Chacón
 
 
+![Photo member José Ricardo Chacón](https://github.com/Josechg07/Proyecto-Carro-/blob/55446197586f12a40b8935138c6959be21e2112d/others/Images-for-readmi/Foto%20Riqui%20miembro%20wro%202025.jpg)
+
 Hey there!! I'm José Ricardo from Venezuela. This is my second time participating in the WRO on the Future Engineers category and this have been too much amazing!! On the first time, last year, my team and I got the opportunity to go to the competition on Italy because we got the first place in the regional leaderboard. This is an entire new experience, even that is the second time!! Creating this tipe of robot, obtaining new knowledge, meeting new people, is an incredible experience that I love. Is incredible what we can obtain with this tipe of challenges, and I'm ready to beat this!! Also, I like F1, cars, robots, program, and the tennis.
 
 ### Andrés José Casenave
 
+
+![Photo member Andrés José Casenave](https://github.com/Josechg07/Proyecto-Carro-/blob/55446197586f12a40b8935138c6959be21e2112d/others/Images-for-readmi/Foto%20Cheto%20miembro%20wro%202025.jpg)
 
 Hello! I’m Andrés from Venezuela, and this is my second time participating in the WRO Future Engineers category. Last year, my team and I got first place in the regional leaderboard. We qualified for the National Contest, where we had the opportunity to meet new people and see their way of confronting the challenge. I like robotics, cars, motorcycles, and basically anything with an engine on it.
 
 
 ### Juán Andrés Perez
 
+
+![Photo member Juán Andrés Perez](https://github.com/Josechg07/Proyecto-Carro-/blob/55446197586f12a40b8935138c6959be21e2112d/others/Images-for-readmi/Foto%20Juanchi%20miembro%20wro%202025.jpg)
 
 Hey, I'm Juan Pérez from Venezuela! This is my first time joining the WRO on the Future Engineers category and I am having a blast! I had never tried it before, but after starting, creating this robot has been an amazing experience. I love challenging myself! From crosswords to chess, you name it, and this whole experience feels like an even bigger challenge I'm ready to beat!
 
