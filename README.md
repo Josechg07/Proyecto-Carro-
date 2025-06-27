@@ -49,7 +49,7 @@ This competition highlights essential stages of the engineering cycle, such as:
 
 Teams are evaluated not only on their robot's performance during the rounds but also on the clarity and depth of their engineering documentation and the ingenuity of their solution. The challenge aims to spark interest in STEM fields by offering hands-on experience in robotics, problem-solving, and collaborative innovation.
 
-Discover more about the challenge by visiting the official site.
+Discover more about the challenge by visiting the official site, or [*here*](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
 
 
 
