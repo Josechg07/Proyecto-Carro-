@@ -246,22 +246,22 @@ A lithium battery was used to power the components, providing the current they n
   </tr>
 </table>
 
-### Camera HuskyLens
+### Camera Pixy
 
 <table border="1" cellspacing="0" cellpadding="10">
   <tr>
     <td width="50%" align="center">
-      <img src="https://tienda.bricogeek.com/6961-large_default/huskylens-camara-de-vision-artificial.jpg" width="250">
+      <img src="https://github.com/Josechg07/Proyecto-Carro-/blob/99c3ce775f65d017a30fcca859685a310eb8402b/others/Images-for-readmi/Pixy%20image.jpg" width="250">
     </td>
     <td width="50%" valign="top">
       <b>Specifications:</b>
       <ul>
-        <li><b>Microcontroller:</b> Kendryte K210 </li>
-        <li><b>SRAM:</b> 8 MB </li>
-        <li><b>Resolution:</b> 320 x 240 Pixels </li>
-        <li><b>Flash memory:</b> 16 MB NOR Flash </li>
+        <li><b>Microcontroller:</b> NXP LPC4330 </li>
+        <li><b>RAM:</b> 264K bytes </li>
+        <li><b>Resolution:</b> 1296 x 976 Pixels </li>
+        <li><b>Flash memory:</b> 2M bytes </li>
         <li><b>Frame rate:</b> Up to 60 FPS </li>
-        <li><b>Frequency:</b> 400 MHz (up to 800MHz) </li>
+        <li><b>Frequency:</b> 204 MHz (up to 800MHz) </li>
       </ul>
     </td>
   </tr>
