@@ -196,15 +196,22 @@ Here are the top view of the internal and external measurements, and .stl file o
 ### Creation of the Robot
 
 
-Here are information about the process of creation of the robot of the team and images of the same.
+Here are information about the process of creation of the robot of the team and images of the same:
 
-![Photo of the creation of the robot](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot%2C.jpg)
+Para armar el carro juntamos diversas piezas de distintas partes, algunas fueron diseñadas en 3D e impresas por nosotros, algunas pocas fueron timadas de kits de carros y otras piezas fueron armadas con LEGO. Originalmente el carro contaba con un sistema de giro con brazos rotulados a los extremos pero al ver que nos presentaba problemas en los giros cambiamos a un sistema con brazos impresos en 3D que posteriormente nos presentaron problemas debido a un punto muerto que tenían lo que permitía el giro libre de las ruedas haciendo que se tambaleara de un lado a otro y por último armamos un sistema de giro con LEGO que resultó ser más exacto y preciso al tomar curvas.
+
+Para el sistema de potencia el carro contaba con un motor de DC  que iba conectado a un engranaje  que a su vez estaba conectado a un eje que se unía a las ruedas proporcionándoles la potencia necesaria para moverse; sin embargo, este sistema fue cambiado ya que el carro al ser muy pequeño y tener las ruedas muy grandes, en las curvas perdía velocidad y dejaba de avanzar, por lo que más adelante fue reemplazado por un sistema de propulsión en base a LEGO, en este sistema de agregó un diferencial mecánico lo que permitía a las ruedas traseras girar a distintas revoluciones, eliminando así el problema de la pérdida de velocidad en las curvas
 
 
-![Photo of the creation of the robot](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot..jpg)
 
+| ![Image](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot%2C.jpg) |
+|:--:|
 
-![Photo of the creation of the robot](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot.jpg)
+| ![Image](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot..jpg) |
+|:--:|
+
+| ![Image](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot.jpg) |
+|:--:|
 
 
 
