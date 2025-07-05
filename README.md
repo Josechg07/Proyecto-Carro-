@@ -333,47 +333,6 @@ The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the di
       </ul>
     </td>
   </tr>
-  <tr>
-    <td width="50%" align="center">
-      <li><b>Motor DC</b></li>
-    </td>
-    <td width="50%" valign="top">
-      <ul>
-        <li><b>Aproximadamente:</b> 250mA </li>
-      </ul>
-    </td>
-  </tr>
- <tr>
-    <td width="50%" align="center">
-      <li><b>Servo Motor (SG90)</b></li>
-    </td>
-    <td width="50%" valign="top">
-      <ul>
-        <li><b>Aproximadamente:</b> 100mA </li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <li><b>Cámara Pixy</b></li>
-    </td>
-    <td width="50%" valign="top">
-      <ul>
-        <li><b>Aproximadamente:</b> 140mA </li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <li><b>Consumo Total:</b></li>
-    </td>
-    <td width="50%" valign="top">
-      <ul>
-        <li><b>574mA: </b> 50+30+4+250+100+140</li>
-        <li><b>Total:</b> 2.87 vatios (P = V \times I \Rightarrow 5V \times 0.574A = 2.87W).</li>
-      </ul>
-    </td>
-  </tr>
 </table>
 
 
@@ -426,6 +385,47 @@ Información sobre todos los componentes:
     <td width="50%" valign="top">
       <ul>
         <li><b>Aproximadamente:</b> 4mA </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Motor DC</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Aproximadamente:</b> 250mA </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Servo Motor (SG90)</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Aproximadamente:</b> 100mA </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Cámara Pixy</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Aproximadamente:</b> 140mA </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Consumo Total:</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>574mA: </b> 50+30+4+250+100+140</li>
+        <li><b>Total:</b> 2.87 vatios (P = V \times I \Rightarrow 5V \times 0.574A = 2.87W).</li>
       </ul>
     </td>
   </tr>
