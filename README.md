@@ -337,6 +337,32 @@ The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the di
 
 
 
+## Energy Consuption
+
+
+Hablando del consumo energético, el Arduino para poder operar, funciona con 5V y con aproximadamente 50 mA. Los dos sensores de ultrasonido (HC-SR04), consumen 5V y 15 mA cada uno, por lo que entre los dos suman un total de 30 mA. El giroscopio MPU6050 consume unos 4 mA, el motor DC (bajo carga moderada) consume cerca de 250 mA, el servomotor (SG90) en movimiento consume un promedio de 100 mA y la cámara Pixy consume unos 140 mA.
+En teoría, si todos los componentes funcionaran simultáneamente a su consumo típico, la suma total sería de 574 mA (50+30+4+250+100+140), lo que se traduce a un total de 2.87 vatios (P = V \times I \Rightarrow 5V \times 0.574A = 2.87W).
+Este es un cálculo teórico, ya que no todos los componentes están funcionando en simultáneo. Por ejemplo, primero se activa un sensor de ultrasonido por 20-30 milisegundos, se apaga, y luego se activa el otro. Lo mismo ocurre con el servomotor y los motores DC, que no están girando constantemente.
+Considerando que la batería tiene una capacidad de 2200 mAh, se tendría una duración teórica máxima de aproximadamente 3.8 horas o 230 minutos (2200 \text{ mAh} / 574 \text{ mA} \approx 3.8 \text{ h}). Esta es una estimación optimista, ya que el consumo real varía constantemente dependiendo de las condiciones de la pista, la fricción y la frecuencia de uso de los motores, lo que podría reducir la autonomía.
+
+
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Arduino</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <b>Specifications:</b>
+      <ul>
+        <li><b>Funciona con:</b> 5V </li>
+        <li><b>Aproximadamente:</b> 50mA </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
 ## Connection Diagram
 
 Here is a driagram about the conection of each component to the arduino =, showing the path of the cables of each one.
