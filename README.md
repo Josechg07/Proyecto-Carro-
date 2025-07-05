@@ -72,7 +72,7 @@ Discover more about the challenge by visiting the official site, or [*here*](htt
 
 
 
-# Video of our robot on: [*Youtube*](https://youtu.be/QaQttkg_3CM)
+# Video of our robot on: [*Youtube*](https://youtu.be/cRhCX8bQ4Iw)
 
 
 
