@@ -418,6 +418,14 @@ void gi() { // Void para que el carro gire a la izquierda
 ### Open Round
 
 
+La estrategia para la ronda abierta se fundamenta en el uso combinado de sensores de ultrasonido y un giroscopio.
+Los sensores de ultrasonido son los encargados de la navegación principal. Su función es doble: primero, identifican los muros para determinar si el robot debe girar a la derecha o a la izquierda; segundo, detectan si el vehículo se acerca demasiado a una pared para corregir la trayectoria y evitar colisiones.
+Por su parte, el giroscopio garantiza la precisión en los movimientos. Cuando los sensores de ultrasonido indican la necesidad de un giro, el giroscopio mide la velocidad angular para asegurar una rotación exacta de 90 grados. Esto es crucial para que el robot mantenga una trayectoria recta después de cada giro.
+Inicialmente, enfrentamos una dificultad: al depender únicamente de los ultrasonidos para evitar paredes, el robot a veces sobrerreaccionaba con múltiples giros pequeños, provocando que avanzara en diagonal. La incorporación del giroscopio fue clave para solucionar este problema, ya que estabilizó la trayectoria y eliminó los giros innecesarios.
+El ciclo de navegación se completa de la siguiente manera: el robot realiza un total de 12 giros de 90 grados, lo que equivale a 3 vueltas completas en un circuito de cuatro esquinas. Al finalizar la tercera vuelta, el vehículo avanza un tramo corto y se detiene para concluir la prueba.
+
+
+
 ### Final Round
 
 
