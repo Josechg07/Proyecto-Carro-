@@ -342,7 +342,11 @@ The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the di
 Here is a driagram about the conection of each component to the arduino =, showing the path of the cables of each one.
 
 
-![Photo of the Connection Diagram](https://github.com/Josechg07/Proyecto-Carro-/blob/0d6765528c967fd064f4c7c3e907677140a68b74/others/Images-for-readmi/Image%20of%20the%20connection%20diagram.jpg)
+
+| ![Photo of the Connection Diagram](https://github.com/Josechg07/Proyecto-Carro-/blob/0d6765528c967fd064f4c7c3e907677140a68b74/others/Images-for-readmi/Image%20of%20the%20connection%20diagram.jpg) |
+|:--:|
+| Connection Diagram |
+
 
 
 
