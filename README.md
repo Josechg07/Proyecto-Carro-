@@ -203,12 +203,8 @@ Para armar el carro juntamos diversas piezas de distintas partes, algunas fueron
 Para el sistema de potencia el carro contaba con un motor de DC  que iba conectado a un engranaje  que a su vez estaba conectado a un eje que se unía a las ruedas proporcionándoles la potencia necesaria para moverse; sin embargo, este sistema fue cambiado ya que el carro al ser muy pequeño y tener las ruedas muy grandes, en las curvas perdía velocidad y dejaba de avanzar, por lo que más adelante fue reemplazado por un sistema de propulsión en base a LEGO, en este sistema de agregó un diferencial mecánico lo que permitía a las ruedas traseras girar a distintas revoluciones, eliminando así el problema de la pérdida de velocidad en las curvas
 
 
-
-| ![Image](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot%2C.jpg) |
-|:--:|
-
-| ![Image](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot..jpg) |
-|:--:|
+| ![Image](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot%2C.jpg) | ![Image](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot..jpg) |
+|:--:|:--:|
 
 | ![Image](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot.jpg) |
 |:--:|
