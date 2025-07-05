@@ -345,6 +345,7 @@ En teoría, si todos los componentes funcionaran simultáneamente a su consumo t
 Este es un cálculo teórico, ya que no todos los componentes están funcionando en simultáneo. Por ejemplo, primero se activa un sensor de ultrasonido por 20-30 milisegundos, se apaga, y luego se activa el otro. Lo mismo ocurre con el servomotor y los motores DC, que no están girando constantemente.
 Considerando que la batería tiene una capacidad de 2200 mAh, se tendría una duración teórica máxima de aproximadamente 3.8 horas o 230 minutos (2200 \text{ mAh} / 574 \text{ mA} \approx 3.8 \text{ h}). Esta es una estimación optimista, ya que el consumo real varía constantemente dependiendo de las condiciones de la pista, la fricción y la frecuencia de uso de los motores, lo que podría reducir la autonomía.
 
+Información del Arduino:
 
 <table border="1" cellspacing="0" cellpadding="10">
   <tr>
@@ -352,7 +353,6 @@ Considerando que la batería tiene una capacidad de 2200 mAh, se tendría una du
       <li><b>Arduino</b></li>
     </td>
     <td width="50%" valign="top">
-      <b>Specifications:</b>
       <ul>
         <li><b>Funciona con:</b> 5V </li>
         <li><b>Aproximadamente:</b> 50mA </li>
@@ -361,6 +361,34 @@ Considerando que la batería tiene una capacidad de 2200 mAh, se tendría una du
   </tr>
 </table>
 
+
+
+Información sobre todos los componentes:
+
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Sensor Ultrasonido (HC-SR04)</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Funciona con:</b> 5V </li>
+        <li><b>Aproximadamente:</b> 15mA </li>
+        <li><b>Consumo entre ambos sensores: </b> 30mA</li>
+      </ul>
+    </td>
+  </tr>
+    <tr>
+    <td width="50%" align="center">
+      <li><b>Giroscopio (MPU6050)</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Aproximadamente:</b> 4mA </li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 
 ## Connection Diagram
