@@ -336,6 +336,118 @@ The HC-SR04 ultrasonic sensor is used for obstacle detection. It measures the di
 </table>
 
 
+
+## Energy Consuption
+
+
+Hablando del consumo energético, el Arduino para poder operar, funciona con 5V y con aproximadamente 50 mA. Los dos sensores de ultrasonido (HC-SR04), consumen 5V y 15 mA cada uno, por lo que entre los dos suman un total de 30 mA. El giroscopio MPU6050 consume unos 4 mA, el motor DC (bajo carga moderada) consume cerca de 250 mA, el servomotor (SG90) en movimiento consume un promedio de 100 mA y la cámara Pixy consume unos 140 mA.
+En teoría, si todos los componentes funcionaran simultáneamente a su consumo típico, la suma total sería de 574 mA (50+30+4+250+100+140), lo que se traduce a un total de 2.87 vatios (P = V \times I \Rightarrow 5V \times 0.574A = 2.87W).
+Este es un cálculo teórico, ya que no todos los componentes están funcionando en simultáneo. Por ejemplo, primero se activa un sensor de ultrasonido por 20-30 milisegundos, se apaga, y luego se activa el otro. Lo mismo ocurre con el servomotor y los motores DC, que no están girando constantemente.
+Considerando que la batería tiene una capacidad de 2200 mAh, se tendría una duración teórica máxima de aproximadamente 3.8 horas o 230 minutos (2200 \text{ mAh} / 574 \text{ mA} \approx 3.8 \text{ h}). Esta es una estimación optimista, ya que el consumo real varía constantemente dependiendo de las condiciones de la pista, la fricción y la frecuencia de uso de los motores, lo que podría reducir la autonomía.
+
+Información del Arduino:
+
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Arduino</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Funciona con:</b> 5V </li>
+        <li><b>Aproximadamente:</b> 50mA </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+Información sobre todos los componentes:
+
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Sensor Ultrasonido (HC-SR04)</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Funciona con:</b> 5V </li>
+        <li><b>Aproximadamente:</b> 15mA </li>
+        <li><b>Consumo entre ambos sensores: </b> 30mA</li>
+      </ul>
+    </td>
+  </tr>
+    <tr>
+    <td width="50%" align="center">
+      <li><b>Giroscopio (MPU6050)</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Aproximadamente:</b> 4mA </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Motor DC</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Aproximadamente:</b> 250mA </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Servo Motor (SG90)</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Aproximadamente:</b> 100mA </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Cámara Pixy</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>Aproximadamente:</b> 140mA </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center">
+      <li><b>Consumo Total:</b></li>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li><b>574mA: </b> 50+30+4+250+100+140</li>
+        <li><b>Total:</b> 2.87 vatios (P = V \times I \Rightarrow 5V \times 0.574A = 2.87W).</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+## Connection Diagram
+
+Here is a driagram about the conection of each component to the arduino =, showing the path of the cables of each one.
+
+
+
+| ![Photo of the Connection Diagram](https://github.com/Josechg07/Proyecto-Carro-/blob/0d6765528c967fd064f4c7c3e907677140a68b74/others/Images-for-readmi/Image%20of%20the%20connection%20diagram.jpg) |
+|:--:|
+| Connection Diagram |
+
+
+
+
 # Code for each one of the component
 
 
@@ -402,6 +514,14 @@ void gi() { // Void para que el carro gire a la izquierda
 # Obstacle Management
 
 ### Open Round
+
+
+La estrategia para la ronda abierta se fundamenta en el uso combinado de sensores de ultrasonido y un giroscopio.
+Los sensores de ultrasonido son los encargados de la navegación principal. Su función es doble: primero, identifican los muros para determinar si el robot debe girar a la derecha o a la izquierda; segundo, detectan si el vehículo se acerca demasiado a una pared para corregir la trayectoria y evitar colisiones.
+Por su parte, el giroscopio garantiza la precisión en los movimientos. Cuando los sensores de ultrasonido indican la necesidad de un giro, el giroscopio mide la velocidad angular para asegurar una rotación exacta de 90 grados. Esto es crucial para que el robot mantenga una trayectoria recta después de cada giro.
+Inicialmente, enfrentamos una dificultad: al depender únicamente de los ultrasonidos para evitar paredes, el robot a veces sobrerreaccionaba con múltiples giros pequeños, provocando que avanzara en diagonal. La incorporación del giroscopio fue clave para solucionar este problema, ya que estabilizó la trayectoria y eliminó los giros innecesarios.
+El ciclo de navegación se completa de la siguiente manera: el robot realiza un total de 12 giros de 90 grados, lo que equivale a 3 vueltas completas en un circuito de cuatro esquinas. Al finalizar la tercera vuelta, el vehículo avanza un tramo corto y se detiene para concluir la prueba.
+
 
 
 ### Final Round
