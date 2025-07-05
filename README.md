@@ -418,6 +418,9 @@ Información sobre todos los componentes:
       </ul>
     </td>
   </tr>
+</table>
+
+<table border="1" cellspacing="0" cellpadding="10">
   <tr>
     <td width="50%" align="center">
       <li><b>Consumo Total:</b></li>
