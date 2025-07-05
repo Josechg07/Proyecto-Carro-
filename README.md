@@ -192,10 +192,21 @@ Here are the top view of the internal and external measurements, and .stl file o
 
 
 
+
 ### Creation of the Robot
 
 
 Here are information about the process of creation of the robot of the team and images of the same.
+
+![Photo of the creation of the robot](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot%2C.jpg)
+
+
+![Photo of the creation of the robot](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot..jpg)
+
+
+![Photo of the creation of the robot](https://github.com/Josechg07/Proyecto-Carro-/blob/90c4d20d7d004b2a8047b338b3c1977b4831c078/others/Images-for-readmi/Image%20of%20the%20creation%20of%20the%20robot.jpg)
+
+
 
 
 # Mobility Management
