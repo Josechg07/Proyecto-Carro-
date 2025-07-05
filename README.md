@@ -190,6 +190,14 @@ Here are the top view of the internal and external measurements, and .stl file o
 
 ![Photo top view of the .stl file of the chassis 3D](https://github.com/Josechg07/Proyecto-Carro-/blob/b10d7031ee4dc45292df1ba2dba1cf9054451a36/others/Images-for-readmi/Top%20view%20chassis%20(.stl).jpg)
 
+
+
+### Creation of the Robot
+
+
+Here are information about the process of creation of the robot of the team and images of the same.
+
+
 # Mobility Management
 
 
