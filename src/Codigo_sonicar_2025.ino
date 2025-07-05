@@ -1,238 +1,291 @@
-#include <NewPing.h> // Libreria del sensor de ultrasonido
-#include <Adafruit_VL53L0X.h> // Libreria del sensor laser
-#include <Servo.h> // Libreria del servo motor
-#define LOX1_ADDRESS 0x30 // Donde se guarda en la memoria la distancia del sensor derecho
-#define LOX2_ADDRESS 0x31 // Donde se guarda en la memoria la distancia del sensor izquierdo
-#define SHT_LOX1 6 // Pin shutdown del sensor laser derecho
-#define SHT_LOX2 7 // Pin shutdown del sensor laser izquierdo
-#define sonar_num 1 // cantidad de sensores usados por la libreria NewPing
-#define dist 400 // distancia maxima aceptada por NewPing
-Adafruit_VL53L0X lox1 = Adafruit_VL53L0X(); // Variable para el sensor laser derecho
-Adafruit_VL53L0X lox2 = Adafruit_VL53L0X(); // Variable para el sensor laser izquierda
-VL53L0X_RangingMeasurementData_t measure1; // Variable de Adafruit para el sensor laser derecho
-VL53L0X_RangingMeasurementData_t measure2; // Variable de Adafruit para el sensor laser izquierdo
-int frente = 0; // Variable para la distancia del frente
-int antf; // Variable usada si el sensor del frente falla
-int derecha; // Variable para la distancia derecha
-int izquierda; // Variable para la distancia izquierda
-int ef = 2; // Echo del frente
-int tf = 5; // Trigger del frente
-int in1 = 8; // Conexion para que avanze el motor
-int in2 = 9; // Conexion para que retroceda el motor
-int en = 10; // Conexion que define la velocidad del motor
-int ser = 11; // Variable para el pin del servo motor
-int vel = 130; // Variable para definir la velocidad del carro
-int recto = 100; // Variable para definir a que angulo deben estar las ruedas para avanzar recto
-int giros = 0; // Contador de los giros que ha dado el carro
-int rosamelano; // Variable que cuenta el tiempo desde el ultimo giro
-int boton = 3; // Conexion del pin para el boton
-Servo giro; // Valor usado para el servo motor
-NewPing sonar[sonar_num] = { // Codigo para activar el sensor ultrasonido
-  NewPing(tf, ef, dist),
+#include <NewPing.h>  // Para los sensores de ultrasonido
+#include <Servo.h>    // Para el servomotor
+#include <MPU6050.h>
+#include <Wire.h>
+#include <Pixy2.h>
+Pixy2 pixy;
+MPU6050 copio;
+int16_t ax, ay, az;
+int16_t gx, gy, gz;
+const int in1 = A2;    // Pin IN1 del controlador de motor
+const int in2 = 7;    // Pin IN2 del controlador de motor
+const int en = 5;      // Pin ENA (PWM) para controlar la velocidad
+const int servo = 10;  // Pin de señal del servo
+const int td = 3;
+const int ed = 2;
+const int ti = 9;  // CAMBIADO: Estaba en el pin 13
+const int ei = 4;
+const int MPU = 0x68;
+const int boton = 8;
+const int luz = 6;
+const int vel = 130;   // Velocidad normal del robot (0-255)
+const int dist = 400;  // Distancia máxima para los sensores (en cm)
+const int recto = 105;
+const int agi = 170;  // Para giros de 90 grados a la izquierda
+const int agd = 30;   // Para giros de 90 grados a la derecha
+const int aci = 165;  // Pequeña corrección para alejarse de la pared derecha
+const int acd = 45;   // Pequeña corrección para alejarse de la pared izquierda
+const int aai = 140;
+const int aad = 70;
+int derecha = 0;
+int uderecha = 0;
+int izquierda = 0;
+int uizquierda = 0;
+float anculo = 0.0;
+int giros = 0;
+int so;
+unsigned long rosamelano = -4000;  // Para asegurar que el primer giro pueda ocurrir
+unsigned long tiempoUltimoArreglo = -150;
+unsigned long utiempo = 0;
+float stiempo = 0.0;
+Servo giro;
+
+NewPing sonar[2] = {
+  NewPing(td, ed, dist),
+  NewPing(ti, ei, dist)
 };
-void setID() { // Codigo para iniciar los sensores laser
-  // Se apagan todos los sensores
-  digitalWrite(SHT_LOX1, LOW);
-  digitalWrite(SHT_LOX2, LOW);
-  delay(10);
-  // Se prenden para activarlos
-  digitalWrite(SHT_LOX1, HIGH);
-  digitalWrite(SHT_LOX2, HIGH);
-  delay(10);
-  // Se apaga el segundo sensor para iniciar el primero
-  digitalWrite(SHT_LOX1, HIGH);
-  digitalWrite(SHT_LOX2, LOW);
-  delay(10);
-  // Iniciando sensor laser 1
-  lox1.begin(LOX1_ADDRESS);
-  delay(10);
-  // Mandar error si el sensor no se prende y volver a intentar
-  while (!lox1.begin(LOX1_ADDRESS)) {
-    Serial.println("Failed to boot first VL53L0X");
-    lox1.begin(LOX1_ADDRESS);
-    delay(20);
-  }
-  delay(10);
-  // Prender el segundo sensor para iniciarlo
-  digitalWrite(SHT_LOX2, HIGH);
-  delay(10);
-  // Iniciar el sensor laser 2
-  lox2.begin(LOX2_ADDRESS);
-  delay(10);
-  // Mandar error si el sensor no prende y volver a intentar
-  if (!lox2.begin(LOX2_ADDRESS)) {
-    Serial.println("Failed to boot second VL53L0X");
-    lox2.begin(LOX2_ADDRESS);
-    delay(20);
-  }
-}
 
 void setup() {
-  Serial.begin(115200); // Iniciar monitor serial
-  pinMode(SHT_LOX1, OUTPUT); //Modo del pin del sensor laser derecho
-  pinMode(SHT_LOX2, OUTPUT); // Modo del pin del sensor laser izquierdo
-  pinMode(ef, INPUT); // Modo del Echo Pin para el frente
-  pinMode(tf, OUTPUT); // Modo del Trigger Pin para el frente
-  pinMode(en, OUTPUT); // Modo del pin para la velocidad del carro
-  pinMode(in1, OUTPUT); // Modo del pin para que avance el carro
-  pinMode(in2, OUTPUT); // Modo del pin para que retroceda el carro
-  pinMode(boton,INPUT); // Modo del pin para el boton
-  giro.attach(ser); // Definir el pin del servo motor
-  digitalWrite(SHT_LOX1, LOW); // Apagar el sensor laser derecho
-  digitalWrite(SHT_LOX2, LOW); // Apagar el sensor laser izquierdo
-  while(digitalRead(boton) == 0){ // No iniciar el codigo hasta que se presione el boton
-    Serial.println(digitalRead(boton));
-    delay(10);
-  }
-  Serial.println("Starting...");
-  setID(); // Iniciar los sensores laser
-  Serial.println("Started!");
-}
-void sf() { // Void para el sensor del frente
-  antf = frente; // Guardar el ultimo valor que tuvo frente
-  frente = sonar[0].ping_cm(); // Guardar el valor actual
+  Serial.begin(9600);
+  Serial.println("Iniciando sistema del robot...");
+  Wire.begin();
+  copio.initialize();
+  giro.attach(servo);
+  giro.write(recto);  // Ruedas rectas al inicio
+  pixy.init();
+  /*while(copio.testConnection()){
+    Serial.println("Error al conectar giroscopio.");
+    copio.initialize();
+    delay(100);
+  }*/
+  Serial.println("Giroscopio conectado correctamente.");
+  // Configurar pines de los motores
+  pinMode(en, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(luz, OUTPUT);
+  // Configurar pin del botón con resistencia pull-up interna
+  pinMode(boton, INPUT_PULLUP);
 
-  if (frente == 0) { // En caso de que el frente de un error
-    frente = antf; // Igualar frente a su ultimo valor
+  // Adjuntar el servo al pin correspondiente
+
+  // Esperar a que se presione el botón para comenzar
+  while (digitalRead(boton) == LOW) {
+    delay(50);  // Pequeña pausa para no saturar el procesador
   }
-  Serial.print("F: ");
-  Serial.print(frente);// Imprimir el valor del frente
-  Serial.println(" ");
-  delay(15);
+  analogWrite(luz, 255);
+  delay(1000);
+  utiempo = millis();
 }
 
-void crotolamo() { // Void para que avance el carro
-  giro.write(recto); // Poner ruedas rectas
-  analogWrite(en, vel); // Poner la velocidad normal
-  digitalWrite(in1, HIGH); // El carro avanza
+void leerSensorDerecha() {
+  uderecha = derecha;
+  derecha = sonar[0].ping_cm();
+  if (derecha == 0) {  // Si el sensor falla, usa la última lectura válida
+    derecha = uderecha;
+  }
+  Serial.print("D: ");
+  Serial.print(derecha);
+  Serial.print(" ");
+}
+
+void leerSensorIzquierda() {
+  uizquierda = izquierda;
+  izquierda = sonar[1].ping_cm();
+  if (izquierda == 0) {  // Si el sensor falla, usa la última lectura válida
+    izquierda = uizquierda;
+  }
+  Serial.print("I: ");
+  Serial.print(izquierda);
+  Serial.print(" ");
+}
+
+void giroscopio() {
+  copio.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+  stiempo = (millis() - utiempo) / 1000.0;
+  utiempo = millis();
+  float rad = gz / 131.0;
+  anculo += (rad * stiempo);
+  if (anculo > 180) anculo -= 360;
+  if (anculo < -180) anculo += 360;
+  Serial.print("Angulo: ");
+  Serial.print(anculo);
+}
+
+void pelao(int num) {
+int i;
+for(i=0; i<num; i++){
+  giroscopio();
+  Serial.println();
+  delay(100);
+}
+}
+
+void pix() {
+  int i;
+  pixy.ccc.getBlocks();
+  if (pixy.ccc.numBlocks) {
+    so = pixy.ccc.blocks[0].m_signature;
+  }
+  delay(10);
+}
+
+void crotolamo() {
+  giro.write(recto);
+  analogWrite(en, vel);
+  digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
 }
-void retroceder() { // Void para que el carro retroceda
-  giro.write(recto); // Poner ruedas rectas
-  analogWrite(en, vel); // Poner velocidad normal
-  digitalWrite(in1, LOW); // El carro retrocede
+
+void lamocroto() {
+  analogWrite(en, vel);
+  digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
 }
-void permatrago() { // Void para que el carro se detenga
-  giro.write(recto); // Poner ruedas rectas
-  analogWrite(en, 0); // Poner la velocidad en 0
-  digitalWrite(in1, LOW); // El carro no avanza ni retrocede
+
+void detener() {
+  giro.write(recto);
+  analogWrite(en, 0);
+  digitalWrite(in1, LOW);
   digitalWrite(in2, LOW);
 }
-void gd() { // Void para que el carro gire a la derecha
-  digitalWrite(LED_BUILTIN, HIGH); // Prender el led del Arduino para mostrar el giro
-  //analogWrite(en, vel); // Aumentar la velocidad del carro
-  digitalWrite(in1, HIGH); // Asegurarse que el carro avanza
+
+void girarDerecha() {
+  Serial.println("Iniciando giro a la derecha...");
+  digitalWrite(LED_BUILTIN, HIGH);
+  analogWrite(en, vel);
+  digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-  giro.write(120); // Rotar las ruedas para que gire a la derecha
-  while (frente < 110 && derecha > 50) { // Parar el giro cuando se cumplan ciertas distancias
-    sf(); // Continuar leyendo los valores
-    sd();
-    delay(20);
+  /*if(izquierda > 40){
+      giro.write(agi);
+      delay(500);
   }
-  crotolamo(); // Reiniciar el carro
-  digitalWrite(LED_BUILTIN, LOW); // Indicar que acabo el giro
-  rosamelano = millis(); // Guardar el tiempo en el que termina el giro
+  while (anculo > -65) {
+    giroscopio();
+    Serial.println();
+    giro.write(agd);
+    delay(40);
+  }*/
+  pelao(15);
+  while (anculo > -80) {
+    giroscopio();
+    Serial.println();
+    lamocroto();
+    Serial.print("Lamocroto ");
+    giro.write(agi);
+    delay(40);
+  }
+  anculo += 85.5;
+  crotolamo();
+  rosamelano = millis();
+  giros++;
+  Serial.print("Giro completado. Total de giros: ");
+  Serial.println(giros);
 }
-void gi() { // Void para que el carro gire a la izquierda
-  digitalWrite(LED_BUILTIN, HIGH); // Prender el led del Arduino para mostrar el giro
-  analogWrite(en, vel + 65); // Aumentar la velocidad del carro
-  digitalWrite(in1, HIGH); // Asegurarse que el carro avanza
+
+void girarIzquierda() {
+  Serial.println("Iniciando giro a la izquierda...");
+  digitalWrite(LED_BUILTIN, HIGH);
+  analogWrite(en, vel);
+  digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-  giro.write(80); // Rotar las ruedas para que gire a la izquierda
-  while(frente < 110 && izquierda > 50){ // Parar el giro cuando se cumplan ciertas distancias
-    sf(); // Continuar leyendo los valores
-    si();
-    delay(100); 
+  /*if(derecha > 40){
+      giro.write(agd);
+      delay(500);
   }
-  crotolamo(); // Reiniciar el carro
-  digitalWrite(LED_BUILTIN, LOW); // Indicar que acabo el giro
-  rosamelano = millis(); // Guardar el tiempo en el que termina el giro
-} 
-void sdi() { // Void para leer los valores de los lados
-  lox1.rangingTest(&measure1, false);  // Leer la distancia derecha
-  lox2.rangingTest(&measure2, false);  // Leer la distancia izquierda
-  derecha = int(measure1.RangeMilliMeter / 10); // Guardar las distancias de ambos lados en cm
-  izquierda = int(measure2.RangeMilliMeter / 10);
-  // Imprimir Valor de la derecha
-  Serial.print("D: ");
-  if (measure1.RangeStatus != 4) {  // En caso de que el sensor no este fuera de rango
-    Serial.print(measure1.RangeMilliMeter / 10);
-  } else { // Si el sensor esta fuera de rango
-    Serial.print("Out of range");
+  while (anculo < 65) {
+    giroscopio();
+    Serial.println();
+    giro.write(agi);
+    delay(40);
+  }*/
+  pelao(15);
+  while (anculo < 80) {
+    giroscopio();
+    Serial.println();
+    lamocroto();
+    Serial.print("Lamocroto ");
+    giro.write(agd);
+    delay(40);
   }
-  // Imprimir la distancia izquierda
-  Serial.print(" ");
-  Serial.print("I: ");
-  if (measure2.RangeStatus != 4) { // En caso de que el sensor no este fuera de rango
-    Serial.print(measure2.RangeMilliMeter / 10);
-  } else { // Si el sensor esta fuera de rango
-    Serial.print("Out of range");
-  }
-  Serial.print(" ");
+  anculo -= 85.5;
+  crotolamo();
+  rosamelano = millis();
+  giros++;
+  Serial.print("Giro completado. Total de giros: ");
+  Serial.println(giros);
 }
-void sd(){ // Void para leer los valores de la derecha
-  lox1.rangingTest(&measure1, false);// Leer la distancia derecha
-  derecha = int(measure1.RangeMilliMeter / 10);// Guardar las distancias de la derecha en cm
-    Serial.print("D: "); // Imprimir Valor de la derecha
-  if (measure1.RangeStatus != 4) {// En caso de que el sensor no este fuera de rango
-    Serial.print(measure1.RangeMilliMeter / 10);
-  } else {// Si el sensor esta fuera de rango
-    Serial.print("Out of range");
+
+
+void loop() {
+  crotolamo();
+  Serial.print(giros);
+  if (giros >= 12) {
+    Serial.println("Trayecto finalizado.");
+    delay(2500);  // Espera 2 segundos
+    detener();
+    while (true) {  // Bucle infinito para detener el programa
+      // No hacer nada
+    }
   }
-  Serial.print(" ");
-}
-void si(){// Void para leer los valores de la izquierda
-  lox2.rangingTest(&measure2, false);// Leer la distancia izquierda
-  izquierda = int(measure2.RangeMilliMeter / 10); // Guardar las distancias de la izquierda en cm
-    Serial.print("I: "); // Imprimir la distancia izquierda
-  if (measure2.RangeStatus != 4) {  // En caso de que el sensor no este fuera de rango
-    Serial.print(measure2.RangeMilliMeter / 10);
-  } else {// Si el sensor esta fuera de rango
-    Serial.print("Out of range");
-  }
-  Serial.print(" ");
-}
-void loop() { // Loop para el carro
-  crotolamo(); // El carro avanza
-  sd();// El carro lee la distancia de todos los lados
-  si();
-  sf();
-  if (giros == 12) { // Si el carro dio las 3 vueltas
-    crotolamo(); // El carro avanza
-    delay(1500); // Esperar 1.5s
-    permatrago(); // Parar el carro
-    Serial.println("Trayecto terminado");
-    while (1) // Evitar que el codigo continue
-      ;
-  }
-  if (frente < 80 && derecha > 100 && millis() - rosamelano > 1500) { // Empezar el giro si ciertos lados son correctos y no se ha girado en los ultimos 1.5s
-    gd(); //Girar a la derecha
-    Serial.println("Giro derecha");
-    giros = +1; // Indicar que se realizo un giro
-  }
-  if (frente < 80 && izquierda > 100 && millis() - rosamelano > 1500) { // Empezar el giro si ciertos lados son correctos y no se ha girado en los ultimos 1.5s
-    gi(); // Girar a la izquierda
-    Serial.println("Giro izquierda");
-    giros = +1; // Indicar que se realizo un giro
-  }
-  sd();// Volver a leer los lados
-  si();
+  leerSensorIzquierda();
+  leerSensorDerecha();
+  giroscopio();
+  pix();
   Serial.println();
-  //if (derecha < izquierda) {
-    //giro.write(70);
-    //delay(100);
-  //}
-  //if (izquierda < derecha) {
-    //giro.write(130);
-    //delay(100);
-  //}
-  if (derecha > 55){ // Si el carro esta muy lejos de la pared derecha, hacer una pequeña correccion
-    giro.write(120); // Girar un poco a la derecha
-    delay(100);
+
+  if (izquierda > 100 && ((millis() - rosamelano) > 4000)) {
+    pelao(10);
+    girarIzquierda();
+  } else if (derecha > 100 && ((millis() - rosamelano) > 4000)) {
+    pelao(10);
+    girarDerecha();
+  } else if (so == 1) {
+    giro.write(acd);
+    pelao(15);
+    giro.write(aci);
+    pelao(15);
+    giro.write(recto);
+    pelao(10);
+    so = 0;
+  } else if (so == 2) {
+    giro.write(aci);
+    pelao(15);
+    giro.write(acd);
+    pelao(15);
+    giro.write(recto);
+    pelao(10);
+    so = 0;
+  } else if (derecha < 20 && (millis() - tiempoUltimoArreglo > 150)) {
+    Serial.println("Correccion -> Izquierda");
+    giro.write(aci);
+    delay(120);
+    tiempoUltimoArreglo = millis();
+    anculo -= 5;
+  } else if (izquierda < 20 && (millis() - tiempoUltimoArreglo > 150)) {
+    Serial.println("Correccion -> Derecha");
+    giro.write(acd);
+    delay(120);
+    tiempoUltimoArreglo = millis();
+    anculo += 5;
+  } else if (anculo > 30) {
+    while (anculo > 30) {
+      giroscopio();
+      Serial.println();
+      giro.write(aad);
+      delay(10);
+      crotolamo();
+    }
+  } else if (anculo < -30) {
+    while (anculo < -30) {
+      giroscopio();
+      Serial.println();
+      giro.write(aai);
+      delay(10);
+      crotolamo();
+    }
+  } else {
+    crotolamo();
   }
-  if (izquierda > 55){ // Si el carro esta muy lejos de la pared izquierda, hacer una pequeña correccion
-    giro.write(80); // Girar un poco a la izquierda
-    delay(100);
-  }
+  delay(50);  // Pequeña pausa al final del bucle para estabilidad
 }
